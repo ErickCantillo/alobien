@@ -1,0 +1,34 @@
+@media(width<=991px) {
+  footer h5 {
+    margin-bottom: 10px;
+  }
+
+  footer .info {
+    gap: 5px;
+  }
+
+  .floating-btn {
+    gap: 5px;
+    align-items: center;
+    padding: 0;
+    width: 70px;
+  }
+
+  .floating-btn a {
+    display: grid !important;
+    width: auto !important;
+    line-height: 1;
+    padding: 5px;
+  }
+
+
+  .floating-btn a span {
+    font-size: 12px;
+  }
+}
+
+@media(width<=767px) {
+  .logo-header {
+    max-width: 60px;
+  }
+}
