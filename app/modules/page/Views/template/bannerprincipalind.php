@@ -70,18 +70,25 @@
                       <?php } ?>
                     </div>
                     <?php if (is_countable($banner->subBanners) && count($banner->subBanners) > 0) { ?>
-                      <div class="sub-banners row">
+
+                      <h3 class="mt-4 titulo-sub-banners">
+                        <i class="fa-regular fa-circle-check"></i>
+                        Nuestros Servicios
+                      </h3>
+                      <div class="sub-banners row gap-2">
                         <?php foreach ($banner->subBanners as $subBanner) { ?>
-                          <div class="sub-banner col-6 col-md-4 col-lg-3 shadow">
-                            <a href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
+                          <div class="sub-banner col-6 col-md-4 col-lg-3 ">
+                            <a  class="shadow" href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
                               <img src="/images/<?php echo $subBanner->publicidad_imagen; ?>"
                                 alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
                               <div class="contenido-sub-banner">
-                                <span>
+                                <span class="texto-sub-banner">
                                   <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
                                 </span>
-                                
-                                <i class="fa-solid fa-angle-right"></i>
+                                <span class="icono-sub-banner">
+                                  <i class="fa-solid fa-angle-right"></i>
+                                </span>
+
                               </div>
                             </a>
                           </div>
@@ -104,7 +111,47 @@
                 <?php if ($banner->mostrarinfo != 1 && $banner->publicidad_enlace) { ?>
                 </a>
               <?php } ?>
+              <?php if ($banner->mostrarinfo == 1) { ?>
+                <div class="contenido-banner">
+                  <div class="container">
+                    <div class="info-banner">
 
+                      <?php echo $banner->publicidad_descripcion; ?>
+                      <?php if ($banner->publicidad_enlace) { ?>
+                        <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="btn-blue">
+                          <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'Ver más'; ?>
+                        </a>
+                      <?php } ?>
+                    </div>
+                    <?php if (is_countable($banner->subBanners) && count($banner->subBanners) > 0) { ?>
+
+                      <h3 class="mt-4 titulo-sub-banners">
+                        <i class="fa-regular fa-circle-check"></i>
+                        Nuestros Servicios
+                      </h3>
+                      <div class="sub-banners row gap-0 gap-lg-2">
+                        <?php foreach ($banner->subBanners as $subBanner) { ?>
+                          <div class="sub-banner col-6 col-md-4 col-lg-2 ">
+                            <a class="shadow" href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
+                              <img src="/images/<?php echo $subBanner->publicidad_imagen; ?>"
+                                alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
+                              <div class="contenido-sub-banner">
+                                <span class="texto-sub-banner">
+                                  <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
+                                </span>
+                                <span class="icono-sub-banner">
+                                  <i class="fa-solid fa-angle-right"></i>
+                                </span>
+
+                              </div>
+                            </a>
+                          </div>
+                        <?php } ?>
+                      </div>
+                    <?php } ?>
+                  </div>
+                </div>
+              <?php } ?>
 
             </div>
 

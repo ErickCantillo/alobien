@@ -31,4 +31,36 @@
   .logo-header {
     max-width: 60px;
   }
+
+  .info-banner {
+    text-align: center;
+  }
+
+  .contenido-banner .info-banner span {
+    font-weight: 700;
+    font-size: 20px !important;
+  }
+
+  .titulo-sub-banners {
+    font-size: 20px
+  }
+
+  .img-subbanner {
+    max-width: 45px;
+  }
+
+  .texto-sub-banner {
+    font-size: 14px !important;
+  }
+
+  .titulo-sub-banners {
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.69);
+    
+  }
+
+  .icono-sub-banner {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-color);
+  }
 }
