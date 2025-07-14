@@ -1,34 +1,124 @@
-<div class="row">
+<div data-aos="" class="row mt-4 slider-<?php echo $columna->contenido_id; ?>">
+  <?php
+  // print_r($columna);
+  if ($columna->contenido_titulo_ver == 1) {
+    echo '<h2>' . $columna->contenido_titulo . '</h2>';
+  }
+  ?>
   <?php echo $columna->contenido_descripcion; ?>
-  <div class="slider_<?php echo $columna->contenido_id; ?> col-sm-12 sliderCont w-100 ">
-    <?php foreach($slidercontent as $slider): ?>
-    <div class="itemSlider">
-      <div class="row">
-        <div class="col-sm-12">
-          <a href="<?php echo $slider->contenido_enlace ?>" <?php if($slider->contenido_enlace_abrir == '1'){echo 'target="_blank"';} ?>>
-            <img src="/images/<?php echo $slider->contenido_imagen; ?>" alt="">
+  <div id="slider_<?php echo $columna->contenido_id; ?>"
+    class="slider_<?php echo $columna->contenido_id; ?> col-sm-12 sliderCont w-100 ">
+    <?php foreach ($slidercontent as $slider): ?>
+      <?php $slider = $slider["nietos"];
+      // print_r($slider->contenido_descripcion);
+      ?>
+
+      <div class="itemSlider itemSlider_<?php echo $columna->contenido_id; ?>">
+
+        <?php if ($slider->contenido_enlace) { ?>
+          <a href="<?php echo $slider->contenido_enlace ?>" <?php if ($slider->contenido_enlace_abrir == '1') {
+               echo 'target="_blank"';
+             } ?>>
+          <?php } ?>
+          <?php if ($slider->contenido_imagen) { ?>
+
+            <img class="img-slider" src="/images/<?php echo $slider->contenido_imagen; ?>"
+              alt="<?php echo $slider->contenido_titulo; ?>">
+          <?php } else { ?>
+            <img class="img-slider" src="/assets/pic7.jpg" alt="<?php echo $slider->contenido_titulo; ?>">
+
+          <?php } ?>
+          <div class="content-slider content-sli1der_<?php echo $columna->contenido_id; ?>">
+
+
+
+            <?php if ($slider->contenido_descripcion != '') { ?>
+              <div class="descripcion-slider">
+
+                <?php echo $slider->contenido_descripcion; ?>
+              </div>
+            <?php } ?>
+
+            <?php if ($slider->contenido_titulo_ver == 1) {
+              echo '<h3>' . $slider->contenido_titulo . '</h3>';
+            } ?>
+
+            <?php if ($slider->contenido_introduccion != '') { ?>
+              <div class="introduccion-slider">
+
+                <?php echo $slider->contenido_introduccion; ?>
+              </div>
+            <?php } ?>
+          </div>
+
+
+          <?php if ($slider->contenido_enlace) { ?>
+
           </a>
-        </div>
+        <?php } ?>
+
       </div>
-    </div>
     <?php endforeach; ?>
   </div>
 </div>
+
 <script>
-$('.sliderCont').slick({
-  infinity: true,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  responsive: [{
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: false,
-      arrows: true
+  // console.log(<?php echo $columna->contenido_id; ?>);
+
+  $('#slider_<?php echo $columna->contenido_id; ?>').slick({
+    infinity: false,
+    slidesToShow: <?php echo $columna->contenido_id == 23 ? 2 : 7 ?>,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    dots: <?php echo $columna->contenido_id == 23 ? 'false' : 'false' ?>,
+    arrows: <?php echo $columna->contenido_id == 23 ? 'true' : 'true' ?>,
+
+    responsive: [{
+      breakpoint: 1200,
+      settings: {
+        infinity: false,
+
+        slidesToShow: <?php echo $columna->contenido_id == 23 ? 1 : 3 ?>,
+        slidesToScroll: 1,
+        dots: <?php echo $columna->contenido_id == 23 ? 'false' : 'false' ?>,
+        arrows: true
+      }
+    },
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: <?php echo $columna->contenido_id == 23 ? 1 : 2 ?>,
+        slidesToScroll: 1,
+        dots: <?php echo $columna->contenido_id == 23 ? 'true' : 'true' ?>,
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 770,
+      settings: {
+        slidesToShow: <?php echo $columna->contenido_id == 23 ? 1 : 2 ?>,
+        slidesToScroll: 1,
+        dots: <?php echo $columna->contenido_id == 23 ? 'true' : 'true' ?>,
+        arrows: false
+      }
+    },
+    ]
+  });
+  $(document).ready(function () {
+    // Verificar si la resolución es mayor o igual a 765px
+    if (window.innerWidth <= 765) {
+      // Al cargar la página, agregar la clase a los slides visibles
+      $('.slider_18 div.slick-active .content-slider').addClass('content-slider_18');
+
+      // Escuchar el evento afterChange para cuando se cambien los slides
+      $('.slider_18').on('afterChange', function (event, slick, currentSlide) {
+        // Remover la clase 'content-slider_18' de todos los divs .content-slider
+        $('.slider_18 div .content-slider').removeClass('content-slider_18');
+
+        // Añadir la clase 'content-slider_18' solo a los slides visibles
+        $('.slider_18 div.slick-active .content-slider').addClass('content-slider_18');
+      });
     }
-  }, ]
-});
+  })
 </script>

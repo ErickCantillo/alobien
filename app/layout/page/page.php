@@ -7,14 +7,16 @@
   <?php $infopageModel = new Page_Model_DbTable_Informacion();
   $infopage = $infopageModel->getById(1);
   ?>
-
   <!-- Jquery -->
   <script src="/components/jquery/jquery-3.6.0.min.js"></script>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/components/bootstrap-5.3/css/bootstrap.min.css">
   <!-- Slick CSS -->
   <link rel="stylesheet" href="/components/slick/slick/slick.css">
   <link rel="stylesheet" href="/components/slick/slick/slick-theme.css">
+
+
   <!-- Global CSS -->
   <link rel="stylesheet" href="/skins/page/css/global.css?v=2">
   <link rel="stylesheet" href="/skins/page/css/responsive.css?v=2">
@@ -27,15 +29,23 @@
   <script src="/components/aos-master/dist/aos.js"></script>
 
   <link rel="shortcut icon" href="/images/<?= $infopage->info_pagina_favicon; ?>">
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="/components/fancybox/carousel.css" />
+  <link rel="stylesheet" href="/components/fancybox/thumbs.css" />
+  <link rel="stylesheet" href="/components/fancybox/fancybox.css" />
+  <script src="/components/fancybox/thumbs.js"></script>
+  <script src="/components/fancybox/fancybox.js"></script>
 
 
-  <script type="text/javascript" id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+  <script type="text/javascript" id="www-widgetapi-script"
+    src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
 
-  <!-- Jquery -->
-  <script src="/components/jquery/jquery-3.6.0.min.js"></script>
   <!-- Popper -->
   <!-- Bootstrap Js -->
   <script src="/components/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Slick JS -->
+  <script src="/components/slick/slick/slick.min.js"></script>
 
 
   <!-- SweetAlert -->
@@ -49,10 +59,11 @@
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <meta name="description" content="<?= $this->_data['meta_description']; ?>" />
   <meta name=" keywords" content="<?= $this->_data['meta_keywords']; ?>" />
-  <?php echo $this->_data['scripts'];  ?>
+  <?php echo $this->_data['scripts']; ?>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWYVxdF4VwIPfmB65X2kMt342GbUXApwQ&sensor=true"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWYVxdF4VwIPfmB65X2kMt342GbUXApwQ&sensor=true"></script>
   <script type="text/javascript">
     var map;
     var longitude = 0;
@@ -61,7 +72,7 @@
     var point = false;
     var zoom = 10;
 
-    function setValuesMap(longitud, latitud, punto, zoomm, icono) {
+    function setValuesMap (longitud, latitud, punto, zoomm, icono) {
       longitude = longitud;
       latitude = latitud;
       if (punto) {
@@ -75,7 +86,7 @@
       }
     }
 
-    function initializeMap() {
+    function initializeMap () {
       var mapOptions = {
         zoom: parseInt(zoom),
         center: new google.maps.LatLng(longitude, longitude),
@@ -95,7 +106,7 @@
 </head>
 
 <body>
-  <header>
+  <header id="mainHeader">
     <?= $this->_data['header']; ?>
   </header>
   <main class="main-general"><?= $this->_content ?></main>
@@ -103,7 +114,6 @@
     <?= $this->_data['footer']; ?>
   </footer>
   <?= $this->_data['adicionales']; ?>
-
 </body>
 
 </html>

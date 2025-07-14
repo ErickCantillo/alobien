@@ -443,50 +443,52 @@ $(document).ready(function () {
       $(".no-colum").attr("style", "display:none!important");
     }
   }
-  $("#contenido_tipo").on("change", function () {
-    var value = $(this).val();
-    if (value != "") {
-      $(".no-start").show();
-    }
-    if (parseInt(value) == 1) {
-      //Si es un banner
-      $(".no-seccion").hide();
-      $(".no-banner").hide();
-      $(".no-contenido").hide();
-      $(".si-banner").show();
-    } else if (parseInt(value) == 2) {
-      //Si es un Contenedor
-      $(".no-seccion").hide();
-      $(".no-banner").hide();
-      $(".no-contenido").hide();
-      $(".si-seccion").show();
-    } else if (parseInt(value) == 3) {
-      //Si es un contenido simple
-      $(".no-seccion").hide();
-      $(".no-banner").hide();
-      $(".no-contenido").hide();
-      $(".si-contenido").show();
-    } else if (parseInt(value) == 5) {
-      //Si es un contenido de Contenedor
-      $(".no-acordion").hide();
-      $(".no-carrousel").hide();
-      $(".no-contenido2").hide();
-      $(".si-contenido2").show();
-    } else if (parseInt(value) == 6) {
-      //Si es un contenido de Contenedor
-      $(".no-contenido2").hide();
-      $(".no-acordion").show();
-      $(".no-carrousel").hide();
-      $(".si-carrousel").show();
-    } else if (parseInt(value) == 7) {
-      //Si es un banner
-      $(".no-acordion").hide();
-      $(".no-contenido2").hide();
-      $(".no-acordion").hide();
-      $(".no-carrousel").hide();
-      $(".si-acordion").show();
-    }
-  });
+  $("#contenido_tipo")
+    .on("change", function () {
+      var value = $(this).val();
+      if (value != "") {
+        $(".no-start").show();
+      }
+      if (parseInt(value) == 1) {
+        //Si es un banner
+        $(".no-seccion").hide();
+        $(".no-banner").hide();
+        $(".no-contenido").hide();
+        $(".si-banner").show();
+      } else if (parseInt(value) == 2) {
+        //Si es un Contenedor
+        $(".no-seccion").hide();
+        $(".no-banner").hide();
+        $(".no-contenido").hide();
+        $(".si-seccion").show();
+      } else if (parseInt(value) == 3) {
+        //Si es un contenido simple
+        $(".no-seccion").hide();
+        $(".no-banner").hide();
+        $(".no-contenido").hide();
+        $(".si-contenido").show();
+      } else if (parseInt(value) == 5) {
+        //Si es un contenido de Contenedor
+        $(".no-acordion").hide();
+        $(".no-carrousel").hide();
+        $(".no-contenido2").hide();
+        $(".si-contenido2").show();
+      } else if (parseInt(value) == 6) {
+        //Si es un contenido de Contenedor
+        $(".no-contenido2").hide();
+        $(".no-acordion").show();
+        $(".no-carrousel").hide();
+        $(".si-carrousel").show();
+      } else if (parseInt(value) == 7) {
+        //Si es un banner
+        $(".no-acordion").hide();
+        $(".no-contenido2").hide();
+        $(".no-acordion").hide();
+        $(".no-carrousel").hide();
+        $(".si-acordion").show();
+      }
+    })
+    .trigger("change");
   $(".colorpicker")
     .colorpicker({
       onChange: function (e) {

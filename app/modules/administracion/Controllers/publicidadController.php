@@ -374,6 +374,10 @@ class Administracion_publicidadController extends Administracion_mainController
 
     // HOME
     $array['1'] = 'Banners Home';
+    $array['2'] = 'Banners Nosotros';
+    $array['3'] = 'Banners Servicios';
+    $array['4'] = 'Banners Galería';
+    $array['5'] = 'Banners Contacto';
 
     return $array;
   }

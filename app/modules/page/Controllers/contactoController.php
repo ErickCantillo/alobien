@@ -2,6 +2,8 @@
 
 class Page_contactoController extends Page_mainController
 {
+  public $botonactivo = 5;
+
   public function indexAction()
   {
     $this->_view->home = $this->template->getContentseccion("1");

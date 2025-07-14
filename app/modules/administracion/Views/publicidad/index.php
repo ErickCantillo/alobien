@@ -231,7 +231,7 @@
 							</td>
 							<td class="text-end">
 								<div>
-									<?php if ($content->publicidad_padre == 0 && $content->publicidad_id  == 2) { ?>
+									<?php if ($content->publicidad_padre == 0 && $content->publicidad_seccion == 1) { ?>
 										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
 									<?php } ?>
 									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>

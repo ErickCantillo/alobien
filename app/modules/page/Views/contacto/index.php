@@ -1,17 +1,4 @@
-<div class="contact-container">
-<?php 
-
-  echo $this->home;
-
-?>
+<?php echo $this->banner ?>
+<div class="contenido-contacto">
+<?php echo $this->contenido ?>
 </div>
-
-<form action="">
-  <input type="text">
-</form>
-
-<?php 
-
-  echo $this->contenido2;
-
-?>

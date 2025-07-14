@@ -1,12 +1,13 @@
 <div class="slider-principal" data-aos="">
-  <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel slide carousel-fade">
+  <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel slide carousel-fade"
+    data-bs-ride="carousel">
 
     <?php if (count($this->banners) >= 2) { ?>
 
       <div class="carousel-indicators">
         <?php foreach ($this->banners as $key => $banner) { ?>
 
-          <button type="button" data-bs-target="##carouselprincipal<?php echo $this->seccionbanner; ?>"
+          <button type="button" data-bs-target="#carouselprincipal<?php echo $this->seccionbanner; ?>"
             data-bs-slide-to="<?php echo $key ?>" <?php if (
                  $key == 0
                ) { ?>class="active" <?php } ?> aria-current="true"
@@ -70,29 +71,30 @@
                       <?php } ?>
                     </div>
                     <?php if (is_countable($banner->subBanners) && count($banner->subBanners) > 0) { ?>
+                      <div class="sub-banners-content">
+                        <h3 class="mt-4 titulo-sub-banners">
+                          <i class="fa-regular fa-circle-check"></i>
+                          Nuestros Servicios
+                        </h3>
+                        <div class="sub-banners row gap-2">
+                          <?php foreach ($banner->subBanners as $subBanner) { ?>
+                            <div class="sub-banner col-6 col-md-4 col-lg-3 ">
+                              <a class="shadow" href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
+                                <img src="/images/<?php echo $subBanner->publicidad_imagen; ?>"
+                                  alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
+                                <div class="contenido-sub-banner">
+                                  <span class="texto-sub-banner">
+                                    <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
+                                  </span>
+                                  <span class="icono-sub-banner">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                  </span>
 
-                      <h3 class="mt-4 titulo-sub-banners">
-                        <i class="fa-regular fa-circle-check"></i>
-                        Nuestros Servicios
-                      </h3>
-                      <div class="sub-banners row gap-2">
-                        <?php foreach ($banner->subBanners as $subBanner) { ?>
-                          <div class="sub-banner col-6 col-md-4 col-lg-3 ">
-                            <a  class="shadow" href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
-                              <img src="/images/<?php echo $subBanner->publicidad_imagen; ?>"
-                                alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
-                              <div class="contenido-sub-banner">
-                                <span class="texto-sub-banner">
-                                  <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
-                                </span>
-                                <span class="icono-sub-banner">
-                                  <i class="fa-solid fa-angle-right"></i>
-                                </span>
-
-                              </div>
-                            </a>
-                          </div>
-                        <?php } ?>
+                                </div>
+                              </a>
+                            </div>
+                          <?php } ?>
+                        </div>
                       </div>
                     <?php } ?>
                   </div>
@@ -124,30 +126,32 @@
                       <?php } ?>
                     </div>
                     <?php if (is_countable($banner->subBanners) && count($banner->subBanners) > 0) { ?>
+                      <div class="sub-banners-responsive">
+                        <h3 class="mt-4 titulo-sub-banners">
+                          <i class="fa-regular fa-circle-check"></i>
+                          Nuestros Servicios
+                        </h3>
+                        <div class="sub-banners row gap-0 gap-lg-2">
+                          <?php foreach ($banner->subBanners as $subBanner) { ?>
+                            <div class="sub-banner col-6 col-md-4 col-lg-2 ">
+                              <a class="shadow" href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
+                                <img src="/images/<?php echo $subBanner->publicidad_imagen; ?>"
+                                  alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
+                                <div class="contenido-sub-banner">
+                                  <span class="texto-sub-banner">
+                                    <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
+                                  </span>
+                                  <span class="icono-sub-banner">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                  </span>
 
-                      <h3 class="mt-4 titulo-sub-banners">
-                        <i class="fa-regular fa-circle-check"></i>
-                        Nuestros Servicios
-                      </h3>
-                      <div class="sub-banners row gap-0 gap-lg-2">
-                        <?php foreach ($banner->subBanners as $subBanner) { ?>
-                          <div class="sub-banner col-6 col-md-4 col-lg-2 ">
-                            <a class="shadow" href="<?php echo $subBanner->publicidad_enlace; ?>" <?php echo $subBanner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?>>
-                              <img src="/images/<?php echo $subBanner->publicidad_imagen; ?>"
-                                alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
-                              <div class="contenido-sub-banner">
-                                <span class="texto-sub-banner">
-                                  <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
-                                </span>
-                                <span class="icono-sub-banner">
-                                  <i class="fa-solid fa-angle-right"></i>
-                                </span>
-
-                              </div>
-                            </a>
-                          </div>
-                        <?php } ?>
+                                </div>
+                              </a>
+                            </div>
+                          <?php } ?>
+                        </div>
                       </div>
+
                     <?php } ?>
                   </div>
                 </div>
@@ -187,6 +191,17 @@
         rel: 1,
         fs: 1
       }
+    }
+  });
+
+  // Inicializar carousel manualmente si es necesario
+  document.addEventListener('DOMContentLoaded', function () {
+    var carouselElement = document.querySelector('#carouselprincipal<?php echo $this->seccionbanner; ?>');
+    if (carouselElement) {
+      var carousel = new bootstrap.Carousel(carouselElement, {
+        interval: 5000,
+        wrap: true
+      });
     }
   });
 </script>

@@ -25,6 +25,14 @@
   .floating-btn a span {
     font-size: 12px;
   }
+
+  .id_5 .col-md-2 {
+    width: 33%;
+  }
+
+  .id_5 .caja-contenido-simple {
+    margin-bottom: 15px;
+  }
 }
 
 @media(width<=767px) {
@@ -39,6 +47,7 @@
   .contenido-banner .info-banner span {
     font-weight: 700;
     font-size: 20px !important;
+    text-shadow: -1px 0px 3px rgba(255, 255, 255, 0.69);
   }
 
   .titulo-sub-banners {
@@ -54,13 +63,45 @@
   }
 
   .titulo-sub-banners {
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.69);
-    
+    text-shadow: -1px 0px 3px rgba(255, 255, 255, 0.69);
+
   }
 
   .icono-sub-banner {
     width: 20px;
     height: 20px;
     border: 1px solid var(--accent-color);
+  }
+
+  .sub-banner a {
+    height: auto;
+    min-height: 115px;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: auto;
+  }
+
+  .id_5 .col-md-2 {
+    width: 50%;
+  }
+
+  .id_20 .design-two .descripcion p span {
+    font-size: 20px !important;
+  }
+
+  .id_20 {
+    background-position: bottom;
+  }
+
+  .id_20 .design-two .col-sm-4 img{
+    max-width: 250px;
+    display: block;
+    margin: auto;
+  }
+  .id_20 .design-two .col-sm-8 .descripcion p::after{
+        width: 38px;
+    height: 53px;
   }
 }

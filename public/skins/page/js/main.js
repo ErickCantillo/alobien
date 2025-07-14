@@ -59,13 +59,13 @@ $(document).ready(function () {
 document.addEventListener("DOMContentLoaded", () => {
   const animaciones = [
     "fade-up",
-    "fade-down",
-    "fade-left",
+    //  "fade-down",
+    /* "fade-left",
     "fade-right",
     "zoom-in",
     "zoom-out",
     "flip-left",
-    "flip-right",
+    "flip-right", */
   ];
   document.querySelectorAll("[data-aos]").forEach((element) => {
     const animacionAleatoria =
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   AOS.init({
-    once: true,
+    // once: true,
     duration: 500,
   });
 
@@ -128,7 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (data2.status === "error") {
               Swal.fire({
                 icon: "error",
-                text: data2.error || "Ha ocurrido un error, por favor intenta de nuevo.",
+                text:
+                  data2.error ||
+                  "Ha ocurrido un error, por favor intenta de nuevo.",
                 confirmButtonColor: "#5475a1",
                 confirmButtonText: "Continuar",
               });
@@ -156,4 +158,26 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
     });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("mainHeader");
+  const threshold = 50;
+
+  function handleStickyHeader() {
+    // Solo aplicar sticky en pantallas mayores a 991px
+    if (window.innerWidth > 991) {
+      if (window.scrollY > threshold) {
+        header.classList.add("sticky-active");
+      } else {
+        header.classList.remove("sticky-active");
+      }
+    } else {
+      // Remover sticky en pantallas menores o iguales a 991px
+      header.classList.remove("sticky-active");
+    }
+  }
+
+  window.addEventListener("scroll", handleStickyHeader);
+  window.addEventListener("resize", handleStickyHeader);
 });

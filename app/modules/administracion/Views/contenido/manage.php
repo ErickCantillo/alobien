@@ -162,9 +162,10 @@
           <div class="col-12 <?php if ($this->content->contenido_padre == 0) { ?>d-none <?php } ?> form-group no-colum">
             <label for="contenido_columna" class="control-label">Columna</label>
             <div class="row">
+
               <div class="col-2">
                 <label class="radio-col">
-                  <input type="radio" value="col-sm-12" <?php if ($this->content->contenido_columna == 'col-sm-12') { ?>
+                  <input type="radio" value="col-md-12" <?php if ($this->content->contenido_columna == 'col-md-12') { ?>
                     checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
                   <span>
                     <img src="/skins/administracion/images/columna12.png">
@@ -173,7 +174,7 @@
               </div>
               <div class="col-2">
                 <label class="radio-col">
-                  <input type="radio" value="col-sm-6" <?php if ($this->content->contenido_columna == 'col-sm-6') { ?>
+                  <input type="radio" value="col-md-6" <?php if ($this->content->contenido_columna == 'col-md-6') { ?>
                     checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
                   <span>
                     <img src="/skins/administracion/images/columna6.png">
@@ -182,7 +183,7 @@
               </div>
               <div class="col-2">
                 <label class="radio-col">
-                  <input type="radio" value="col-sm-4" <?php if ($this->content->contenido_columna == 'col-sm-4') { ?>
+                  <input type="radio" value="col-md-4" <?php if ($this->content->contenido_columna == 'col-md-4') { ?>
                     checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
                   <span>
                     <img src="/skins/administracion/images/columna4.png">
@@ -191,16 +192,25 @@
               </div>
               <div class="col-2">
                 <label class="radio-col">
-                  <input type="radio" value="col-sm-3" <?php if ($this->content->contenido_columna == 'col-sm-3') { ?>
+                  <input type="radio" value="col-md-3" <?php if ($this->content->contenido_columna == 'col-md-3') { ?>
                     checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
                   <span>
                     <img src="/skins/administracion/images/columna3.png">
                   </span>
                 </label>
               </div>
+              <div class="col-2">
+                <label class="radio-col">
+                  <input type="radio" value="col-md-2" <?php if ($this->content->contenido_columna == 'col-md-2') { ?>
+                    checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
+                  <span>
+                    <img src="/skins/administracion/images/columna5.png">
+                  </span>
+                </label>
+              </div>
               <div class="col-2 no-carrousel2 ">
                 <label class="radio-col">
-                  <input type="radio" value="col-sm-8" <?php if ($this->content->contenido_columna == 'col-sm-8') { ?>
+                  <input type="radio" value="col-md-8" <?php if ($this->content->contenido_columna == 'col-md-8') { ?>
                     checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
                   <span>
                     <img src="/skins/administracion/images/columna8.png">
@@ -209,7 +219,7 @@
               </div>
               <div class="col-2 no-carrousel2 ">
                 <label class="radio-col">
-                  <input type="radio" value="col-sm-9" <?php if ($this->content->contenido_columna == 'col-sm-9') { ?>
+                  <input type="radio" value="col-md-9" <?php if ($this->content->contenido_columna == 'col-md-9') { ?>
                     checked <?php } ?> name="contenido_columna" id="contenido_columna" class="form-control">
                   <span>
                     <img src="/skins/administracion/images/columna9.png">

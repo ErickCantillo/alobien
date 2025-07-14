@@ -18,16 +18,16 @@
               <li class="nav-item">
                 <a class="nav-link <?= $this->botonactivo == 1 ? 'active' : '' ?>" aria-current="page" href="/">Inicio</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?= $this->botonactivo == 2 ? 'active' : '' ?>">
                 <a class="nav-link" href="/page/nosotros">Nosotros</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?= $this->botonactivo == 3 ? 'active' : '' ?>">
                 <a class="nav-link" href="/page/servicios">Servicios</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?= $this->botonactivo == 4 ? 'active' : '' ?>">
                 <a class="nav-link" href="/page/galeria">Galería</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item <?= $this->botonactivo == 5 ? 'active' : '' ?>">
                 <a class="nav-link" href="/page/contacto">Contáctenos</a>
               </li>
             </ul>
