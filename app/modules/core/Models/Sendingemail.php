@@ -33,7 +33,7 @@ class Core_Model_Sendingemail
       $this->_view->usuario = $user->user_user;
       /*fin parametros de la vista */
       //$this->email->getMail()->setFrom("desarrollo4@omegawebsystems.com","Intranet Coopcafam");
-      $this->email->getMail()->addAddress($user->user_email,  $user->user_names . " " . $user->user_lastnames);
+      $this->email->getMail()->addAddress($user->user_email, $user->user_names . " " . $user->user_lastnames);
       $content = $this->_view->getRoutPHP('/../app/modules/core/Views/templatesemail/forgotpassword.php');
       $this->email->getMail()->Subject = "Recuperación de Contraseña Gestor de Contenidos";
       $this->email->getMail()->msgHTML($content);
@@ -62,6 +62,28 @@ class Core_Model_Sendingemail
     $this->email->getMail()->msgHTML($content);
     $this->email->getMail()->AltBody = $content;
     $this->email->getMail()->addBCC($informacion->info_pagina_correo_oculto);
+    if ($this->email->sed() == true) {
+      return 1;
+    } else {
+      return 2;
+    }
+  }
+  public function sendMailContactForm($data)
+  {
+    $this->_view->data = $data;
+    $infopageModel = new Page_Model_DbTable_Informacion();
+    $informacion = $infopageModel->getById(1);
+    $correo = $informacion->info_pagina_correos_contacto;
+    $correo2 = $informacion->info_pagina_correo_oculto;
+
+    /* $this->email->getMail()->addAddress($correo, "Formulario de contacto Alobien");
+    $this->email->getMail()->addBCC($correo2, ""); */
+    $this->email->getMail()->addBCC("desarrollo8@omegawebsystems.com", "Formulario de contacto Alobien");
+    $content = $this->_view->getRoutPHP('/../app/modules/core/Views/templatesemail/mailContact.php');
+    $this->email->getMail()->Subject = 'Formulario de contacto - Alobien';
+    // $this->email->getMail()->setFrom($data['email'], $data['name']);
+    $this->email->getMail()->msgHTML($content);
+    $this->email->getMail()->AltBody = $content;
     if ($this->email->sed() == true) {
       return 1;
     } else {

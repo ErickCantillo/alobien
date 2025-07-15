@@ -1,42 +1,104 @@
-<?php foreach($this->coops as $key => $seccion){ ?>
-    <?php foreach($seccion as $key1 => $banner){ ?>
-        <?php foreach($banner as $key2 => $itemBanner){ ?>
-            <?php foreach($itemBanner as $key3 => $item){ ?>
-                <div class="banner-internas" style="margin-top: 50px;">
-                    <div id="carouselprincipal<?php echo $item->cooperativa_id;  ?>" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <?php foreach($item as $key4 => $it){ ?>
-                            <li data-bs-target="#carouselprincipal<?php echo $item->cooperativa_id;  ?>" data-slide-to="0" <?php if($key4==0){ ?>class="active"<?php }?> ></li>
-                        <?php } ?>
-                    </ol>
-                        <div class="carousel-inner">
-                            <?php foreach($item as $key4 => $it){ ?>
-                                <?php if($it->cooperativa_id){ ?>
-                                    <div class="carousel-item <?php if($key4 == 0){ ?>active <?php } ?>">
-                                        <a href="<?php echo $it->cooperativa_enlace; ?>" <?php if ($it->cooperativa_enlace_abrir == 1) { ?> target="_blank"  <?php } ?>>
-                                                <div class="fondo-imagen" style="background-image: url(/images/<?php echo $it->cooperativa_fondo_imagen; ?>);"></div>
-                                        </a>
+<div class="slider-internas">
+
+    <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <?php foreach ($this->banners as $key => $banner) { ?>
+                <div class="carousel-item <?php if ($key == 0) { ?>active <?php } ?>">
+
+                    <?php if ($this->id_youtube($banner->publicidad_video) != false) { ?>
+                        <!-- <div class="fondo-video-youtube">
+                            <div class="banner-video-youtube" id="videobanner<?php echo $banner->publicidad_id; ?> " data-video="<?php echo $this->id_youtube($banner->publicidad_video); ?>"></div>
+                        </div> -->
+
+
+
+                        <div class="fondo-imagen-interna fondo-imagen-interna-video">
+
+                            <a href="<?php echo $banner->publicidad_video; ?>" data-fancybox="video-gallery">
+
+                                <img class="img-banner-interna img-video"
+                                    src="https://img.youtube.com/vi/<?php echo $this->id_youtube($banner->publicidad_video); ?>/hqdefault.jpg"
+                                    alt="Video Thumbnail" />
+                                <div class="play-icon">▶️</div>
+                            </a>
+                        </div>
+
+
+
+                    <?php } else { ?>
+
+                        <div class="fondo-imagen-interna d-none d-md-flex justify-content-end align-items-center">
+                            <?php if ($banner->publicidad_enlace) { ?>
+                                <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="d-flex w-100">
+                                <?php } ?>
+
+                                <img src="/images/<?php echo $banner->publicidad_imagen; ?>"
+                                    alt="Banner <?php echo $banner->publicidad_nombre; ?>" class="img-banner-interna">
+                                <?php if ($banner->mostrarinfo == 1) { ?>
+                                    <div class="contenido-banner-internas">
+                                        <?php echo $banner->publicidad_descripcion; ?>
                                     </div>
                                 <?php } ?>
+                                <?php if ($banner->publicidad_enlace) { ?>
+
+                                </a>
+                            <?php } ?>
+
+                        </div>
+
+                        <div class="fondo-imagen-responsive d-md-none d-flex justify-content-center align-items-center">
+                            <?php if ($banner->publicidad_enlace) { ?>
+                                <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="d-flex">
+                                <?php } ?>
+
+                                <img src="/images/<?php echo $banner->publicidad_imagenresponsive; ?>" alt=""
+                                    class="img-banner-internas w-100">
+                                <?php if ($banner->mostrarinfo == 1) { ?>
+                                    <div class="titulo-banner-internas">
+                                        <?php echo $banner->publicidad_descripcion; ?>
+                                    </div>
+                                <?php } ?>
+
+                                <?php if ($banner->publicidad_enlace) { ?>
+
+                                </a>
                             <?php } ?>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselprincipal<?php echo $this->seccionbanner;  ?>" role="button"
-                            data-slide="prev">
-                            <span class="carrusel-derecha" aria-hidden="true">
-                                <i class="fas fa-chevron-left"></i>      
-                            </span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselprincipal<?php echo $this->seccionbanner;  ?>" role="button"
-                            data-slide="next">
-                            <span class="carrusel-izquierda" aria-hidden="true">
-                                <i class="fas fa-chevron-right"></i> 
-                            </span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+
+                    <?php } ?>
+
+
+
+
                 </div>
             <?php } ?>
+        </div>
+        <?php if (count($this->banners) > 1) { ?>
+
+            <button type="button" class="carousel-control-prev"
+                data-bs-target="#carouselprincipal<?php echo $this->seccionbanner; ?>" data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                <i class="fa-solid fa-chevron-left carousel-control-prev-icono"></i>
+            </button>
+            <button type="button" class="carousel-control-next"
+                data-bs-target="#carouselprincipal<?php echo $this->seccionbanner; ?>" data-bs-slide="next">
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                <i class="fa-solid fa-chevron-right carousel-control-next-icono"></i>
+            </button>
         <?php } ?>
-    <?php } ?>
-<?php } ?>
+
+    </div>
+</div>
+<!-- 
+<script>
+    Fancybox.bind('[data-fancybox]', {
+        Html: {
+            youtube: {
+                controls: 1,
+                rel: 1,
+                fs: 1
+            }
+        }
+    });
+</script> -->

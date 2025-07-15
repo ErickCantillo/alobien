@@ -418,7 +418,10 @@ class Administracion_contenidoController extends Administracion_mainController
   {
     $array = array();
     $array['1'] = 'Home';
-    $array['2'] = 'Banner Home';
+    $array['2'] = 'Nosotros';
+    $array['3'] = 'Servicios';
+    $array['4'] = 'Galeria';
+    $array['5'] = 'Contáctenos';
     return $array;
   }
 

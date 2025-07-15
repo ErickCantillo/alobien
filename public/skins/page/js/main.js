@@ -160,24 +160,86 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.getElementById("mainHeader");
-  const threshold = 50;
-
-  function handleStickyHeader() {
-    // Solo aplicar sticky en pantallas mayores a 991px
-    if (window.innerWidth > 991) {
-      if (window.scrollY > threshold) {
-        header.classList.add("sticky-active");
+  /* ------------------------------------------------------ */
+  /* --------------------- FORMULARIO CONTACTO PÁGINA ---------------- */
+  /* ------------------------------------------------------ */
+  document
+    .getElementById("form-contacto")
+    ?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const response = grecaptcha.getResponse();
+      if (response.length === 0) {
+        Swal.fire({
+          icon: "warning",
+          text: "Por favor, verifica que no eres un robot.",
+          confirmButtonColor: "#5475a1",
+          confirmButtonText: "Continuar",
+        });
+        grecaptcha.reset();
       } else {
-        header.classList.remove("sticky-active");
-      }
-    } else {
-      // Remover sticky en pantallas menores o iguales a 991px
-      header.classList.remove("sticky-active");
-    }
-  }
+        $(".loader-bx").addClass("show");
 
-  window.addEventListener("scroll", handleStickyHeader);
-  window.addEventListener("resize", handleStickyHeader);
+        let submitBtn = document.getElementById("submit-btn-contacto");
+        // Deshabilitar botón y mostrar animación
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Enviando...";
+
+        let formData = new FormData(this);
+        let data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        fetch(this.getAttribute("action"), {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data2) => {
+            if (data2.status.trim().toLowerCase() === "success") {
+              Swal.fire({
+                icon: "success",
+                text: "Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos pronto.",
+                confirmButtonColor: "#5475a1",
+                confirmButtonText: "Continuar",
+              });
+              document.getElementById("form-contacto").reset();
+            } else if (data2.status === "error") {
+              Swal.fire({
+                icon: "error",
+                text:
+                  data2.error ||
+                  "Ha ocurrido un error, por favor intenta de nuevo.",
+                confirmButtonColor: "#5475a1",
+                confirmButtonText: "Continuar",
+              });
+            }
+
+            // Habilitar botón y restaurar texto
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Enviar Mensaje";
+            $(".loader-bx").removeClass("show");
+            grecaptcha.reset();
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              text: "Ha ocurrido un error, por favor intenta de nuevo.",
+              confirmButtonColor: "#5475a1",
+              confirmButtonText: "Continuar",
+            });
+            // Habilitar botón y restaurar texto
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Enviar Mensaje";
+            $(".loader-bx").removeClass("show");
+            grecaptcha.reset();
+          });
+      }
+    });
 });

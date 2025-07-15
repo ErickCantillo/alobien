@@ -24,6 +24,9 @@
   <!-- Global CSS -->
   <link rel="stylesheet" href="/skins/administracion/css/global.css">
   <link rel="shortcut icon" href="/images/<?= $infopage->info_pagina_favicon; ?>">
+    <!-- Dropzone -->
+  <link rel="stylesheet" href="/components/dropzone/dist/dropzone.css">
+  <script src="/components/dropzone/dist/dropzone.js"></script>
 
   <script type="text/javascript">
     var map;

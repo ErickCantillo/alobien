@@ -117,6 +117,6 @@ class Page_Model_Template_Template
 		$publicidadModel = new Page_Model_DbTable_Publicidad();
 		$this->_view->banners = $publicidadModel->getList("publicidad_seccion = '$seccion' AND publicidad_estado = '1'", "orden ASC");
 
-		return $this->_view->getRoutPHP("modules/page/Views/template/bannerprincipal.php");
+		return $this->_view->getRoutPHP("modules/page/Views/template/bannerinternas.php");
 	}
 }

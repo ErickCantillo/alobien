@@ -1,6 +1,6 @@
 <div class="slider-principal" data-aos="">
-  <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel slide carousel-fade"
-    data-bs-ride="carousel">
+  <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel  carousel-fade"
+    data-bs-ride="">
 
     <?php if (count($this->banners) >= 2) { ?>
 
@@ -28,7 +28,7 @@
             </div> -->
 
 
-            <div class="fondo-imagen-interna fondo-imagen-interna-video">
+            <div class="fondo-imagen-principal fondo-imagen-principal-video">
 
               <a href="<?php echo $banner->publicidad_video; ?>" data-fancybox="video-gallery">
 
@@ -43,7 +43,7 @@
 
           <?php } else { ?>
 
-            <div class="fondo-imagen d-none d-lg-flex justify-content-start align-items-center">
+            <div class="fondo-imagen d-none d-md-flex justify-content-start align-items-center">
 
               <?php if ($banner->mostrarinfo != 1 && $banner->publicidad_enlace) { ?>
                 <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="w-100">
@@ -102,7 +102,7 @@
               <?php } ?>
             </div>
 
-            <div class="fondo-imagen-responsive d-lg-none d-flex justify-content-center align-items-center">
+            <div class="fondo-imagen-responsive d-md-none d-flex justify-content-center align-items-center">
               <?php if ($banner->mostrarinfo != 1 && $banner->publicidad_enlace) { ?>
                 <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="w-100">
 

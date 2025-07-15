@@ -23,7 +23,7 @@
 @font-face {
   font-family: 'Domus';
   src: url('/assets/fonts/Domus.otf') format('opentype');
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -55,7 +55,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Domus', sans-serif;
-  font-weight: normal;
+  font-weight: 300;
 
   position: relative;
   /* border: 1px solid red;  */
@@ -128,7 +128,7 @@ header {
   width: 100%;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--gris-medio);
+  border-bottom: 1px solid var(--gris-claro);
   transition: all 0.3s ease;
 }
 
@@ -155,6 +155,7 @@ header {
 header .nav-link {
   color: var(--tertiary-color);
   font-size: 19px;
+  font-weight: 500 ;
 }
 
 header .nav-link:hover {
@@ -291,21 +292,17 @@ FLOTANTES FIN
   width: 100%;
 }
 
-.fondo-imagen img.img-banner,
-.img-banner-principal,
-.fondo-imagen-interna-video img {
+.img-banner {
   width: 100%;
   height: 500px;
   aspect-ratio: 28/9;
   object-fit: cover;
 }
 
-@media (width >1700px) {
+@media (width > 1700px) {
 
-  .fondo-imagen .info-banner img,
-  .img-banner-principal,
-  .fondo-imagen-interna-video img {
-    height: 700px;
+  .img-banner {
+    height: 800px;
 
   }
 }
@@ -508,6 +505,33 @@ FLOTANTES FIN
 
 }
 
+/* Banner internas */
+
+.fondo-imagen-internas img {
+  width: 100%;
+  height: 500px;
+  aspect-ratio: 28/9;
+  object-fit: cover;
+
+}
+
+@media (width >1700px) {
+  .fondo-imagen-internas img {
+    height: 700px;
+  }
+}
+
+.img-banner-interna {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color);
+}
+
 
 .content-box>.row {}
 
@@ -575,6 +599,12 @@ FLOTANTES FIN
   color: var(--tertiary-color);
 }
 
+.slick-dots {
+  position: relative;
+  bottom: -5px;
+
+}
+
 .slick-dots li.slick-active button:before {
   color: var(--primary-color);
 }
@@ -629,7 +659,7 @@ FLOTANTES FIN
 
 }
 
-.content-sli1der_23 {
+.content-slider_23 {
   width: 62%;
 }
 
@@ -660,3 +690,85 @@ FLOTANTES FIN
 .slick-dots li {
   width: 15px;
 }
+
+/* Contactenos */
+.modalPoliticas .modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.bg-azul {
+  background-color: var(--primary-color);
+}
+
+.btn-azul {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-azul:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* ********************
+INICIO GALERIA
+*************************** */
+.contenedor-galeria {
+  padding-bottom: 15px;
+}
+
+.contenedor-galeria h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  height: 50px;
+  display: grid;
+  align-items: center;
+}
+
+.contenedor-galeria .col {
+  margin-bottom: 20px;
+}
+
+.contenedor-galeria .portada {
+  border-radius: 10px;
+  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.contenedor-galeria .portada:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1px 5px 0 hsla(0, 0%, 0%, 0.8);
+
+}
+
+
+.titulo-album {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--tertiary-color);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--gris-oscuro);
+  line-height: 1;
+}
+
+.pagination .page-link {
+  line-height: 1;
+
+}
+
+/* ********************
+FIN GALERIA
+*************************** */

@@ -28,7 +28,7 @@
             <img class="img-slider" src="/assets/pic7.jpg" alt="<?php echo $slider->contenido_titulo; ?>">
 
           <?php } ?>
-          <div class="content-slider content-sli1der_<?php echo $columna->contenido_id; ?>">
+          <div class="content-slider content-slider_<?php echo $columna->contenido_id; ?>">
 
 
 
