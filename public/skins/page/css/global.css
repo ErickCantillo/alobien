@@ -1015,8 +1015,25 @@ FIN GALERIA
   flex-direction: column;
   justify-content: space-between;
   /* margin-bottom: 1.5rem; */
-      gap: 5px;
+  gap: 5px;
 }
+.contenido-nosotros .design-five {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.contenido-nosotros  .design-five .img-fluid {
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 150px;
+}
+
+/* Servicios */
 
 .contenido-interna .contenedor-seccion {
   padding: 15px 0;
@@ -1045,6 +1062,76 @@ FIN GALERIA
   object-fit: cover;
 }
 
-.id_32 .columna-seccion{
+.id_32 .columna-seccion {
   margin-bottom: 1.5rem;
 }
+
+.contenido-servicios .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.contenido-servicios .descripcion h3 span {
+  width: 100%;
+  display: block;
+}
+
+.contenido-servicios ::marker {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.contenido-servicios dl,
+.contenido-servicios ol,
+.contenido-servicios ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.contenido-servicios .caja-contenido-simple,
+.contenido-servicios .caja-contenido-simple>.row {
+  height: 100%;
+}
+
+.contenido-servicios .columna-seccion {
+  margin: 10px 0;
+}
+
+/* .contenido-servicios .col-contenido{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+} */
+.contenido-servicios .design-five .img-fluid {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  aspect-ratio: 1/1;
+
+}
+
+.contenido-servicios .id_46 .design-five {
+  overflow: hidden;
+display: grid;
+  place-items: center;
+  transition: all 300ms ease;
+  border-radius: 10px;
+  border: 1px solid var(--gris-claro);
+  padding: 10px;
+
+}
+
+.contenido-servicios .design-five:hover {
+  padding: 0px;
+}
+
+.contenido-servicios .id_46 .columna-seccion {
+  width: 14%;
+}
+
+

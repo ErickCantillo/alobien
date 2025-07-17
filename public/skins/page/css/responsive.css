@@ -185,9 +185,23 @@
 BANNER INTERNAS FIN
 -------------------- */
 
-.contenido-interna .col-contenido{
-  margin-bottom: 15px;
-}
+  .contenido-interna .col-contenido {
+    margin-bottom: 15px;
+  }
+
+  .contenido-servicios .id_46 .columna-seccion {
+    width: 33%;
+  }
+
+  .id_63 .design-five {
+    border-width: 1px !important;
+
+  }
+
+  .id_63 .columna-seccion {
+    margin-bottom: 15px;
+    width: 33%;
+  }
 }
 
 @media (max-width:576px) {

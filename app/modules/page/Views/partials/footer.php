@@ -5,23 +5,23 @@
         <img src="/assets/LogoFooter.png" alt="Logo Alobien" class="img-fluid d-block m-auto">
       </div>
       <div class="col-12 col-lg-4">
-        <h5><strong>Suscríbete ahora</strong> <span> para más información</span></h5>
-        <form action="/page/index/enviarsub" class="formulario-footer" method="post"  id="form-contact">
-          <input type="text" name="name" class="form-control mb-2" placeholder="Nombre" required>
-          <input type="number" name="phone" class="form-control mb-2" placeholder="Teléfono" required>
+        <h5><strong>Subscribe now</strong> <span> for more information</span></h5>
+        <form action="/page/index/enviarsub" class="formulario-footer" method="post" id="form-contact">
+          <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
+          <input type="number" name="phone" class="form-control mb-2" placeholder="Phone" required>
 
-          <input type="hidden" name="company" class="form-control mb-2" placeholder="Empresa">
+          <input type="hidden" name="company" class="form-control mb-2" placeholder="Company">
           <input name="hash" type="hidden" value="<?php echo md5(date("Y-m-d")); ?>" />
 
           <input type="email" name="email" class="form-control mb-2" placeholder="Email" required>
 
           <div class="g-recaptcha mb-2" data-sitekey="6LfFDZskAAAAAE2HmM7Z16hOOToYIWZC_31E61Sr"></div>
 
-          <input type="submit" id="submit-btn" class="btn-amarillo" value="Enviar >>">
+          <input type="submit" id="submit-btn" class="btn-amarillo" value="Send >>">
         </form>
       </div>
       <div class="col-12 col-lg-3 text-center text-lg-start">
-        <h5>Contáctenos</h5>
+        <h5>Contact Us</h5>
         <div class="info">
           <?php if ($this->infopage->info_pagina_telefono) { ?>
             <span class="info-footer d-flex gap-2 align-items-center justify-content-center justify-content-lg-start">
@@ -35,12 +35,17 @@
               <?php echo $this->infopage->info_pagina_correos_contacto ?>
             </span>
           <?php } ?>
-
+          <?php if ($this->infopage->info_pagina_direccion_contacto) { ?>
+            <span class="info-footer d-flex gap-2 align-items-center justify-content-center justify-content-lg-start">
+              <i class="fa-solid fa-location-dot"></i>
+              <?php echo $this->infopage->info_pagina_direccion_contacto ?>
+            </span>
+          <?php } ?>
         </div>
 
       </div>
       <div class="col-12 col-lg-3 text-center text-lg-start">
-        <h5>Síguenos en</h5>
+        <h5>Follow us on</h5>
         <div class="icons-redes d-grid gap-1 gap-lg-3">
 
           <?php if ($this->infopage->info_pagina_youtube) {
@@ -128,7 +133,7 @@
       <div class="col-12">
         <hr>
         <span class="text-center d-block">
-          &copy;Todos los Derechos Reservados Filsa <?php echo date('Y'); ?> - Diseñado por <a href="https://omegasolucionesweb.com" target="_blank" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-50-hover">
+          &copy;All Rights Reserved Filsa <?php echo date('Y'); ?> - Designed by <a href="https://omegasolucionesweb.com" target="_blank" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-50-hover">
             Omega Soluciones Web
           </a>
         </span>

@@ -11,6 +11,7 @@ abstract class IFmRequest {
   public $files;
 
   public $requestMethod;
+  public $config;
 
   abstract public function parseRequest();
 

@@ -18,18 +18,18 @@
     const infoHeader = document.getElementById("info-no-home");
     const threshold = 50;
 
-    function handleStickyHeader () {
+    function handleStickyHeader() {
       // Solo aplicar sticky en pantallas mayores a 991px
       if (window.innerWidth > 991) {
         if (window.scrollY > threshold) {
           header.classList.add("sticky-active");
           if (infoHeader) {
-            infoHeader.style.display = "block"; // Mostrar info-header
+            infoHeader.style.display = "block"; // Show info-header
           }
         } else {
           header.classList.remove("sticky-active");
           if (infoHeader) {
-            infoHeader.style.display = "none"; // Ocultar info-header
+            infoHeader.style.display = "none"; // Hide info-header
           }
         }
       } else {

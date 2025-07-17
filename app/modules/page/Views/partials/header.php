@@ -11,27 +11,27 @@
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body gap-3">
             <ul class="navbar-nav justify-content-between flex-grow-1 pe-3">
               <li class="nav-item">
                 <a class="nav-link <?= $this->botonactivo == 1 ? 'active' : '' ?>" aria-current="page"
-                  href="/">Inicio</a>
+                  href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  <?= $this->botonactivo == 2 ? 'active' : '' ?>" href="/page/nosotros">Nosotros</a>
+                <a class="nav-link  <?= $this->botonactivo == 2 ? 'active' : '' ?>" href="/page/nosotros">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  <?= $this->botonactivo == 3 ? 'active' : '' ?>" href="/page/servicios">Servicios</a>
+                <a class="nav-link  <?= $this->botonactivo == 3 ? 'active' : '' ?>" href="/page/servicios">Services</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link <?= $this->botonactivo == 4 ? 'active' : '' ?>" href="/page/galeria">Galería</a>
+                <a class="nav-link <?= $this->botonactivo == 4 ? 'active' : '' ?>" href="/page/galeria">Gallery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  <?= $this->botonactivo == 5 ? 'active' : '' ?>"
-                  href="/page/contacto">Contáctenos</a>
+                  href="/page/contacto">Contact Us</a>
               </li>
             </ul>
             <div class="info-no-home" id="info-no-home">
@@ -46,10 +46,18 @@
                       </span>
                     <?php } ?>
                   </span>
-
                 </div>
 
-                <div class="d-md-grid d-xl-flex gap-3 align-items-center justify-content-start justify-content-lg-end">
+                <div class="d-md-grid d-xl-flex gap-1 gap-xl-2 align-items-center justify-content-start justify-content-lg-end">
+                  <span class="info-header correo ">
+                    <?php if ($this->infopage->info_pagina_direccion_contacto) { ?>
+                      <span class="info-footer d-flex gap-1 align-items-center justify-content-start justify-content-lg-end">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <?php echo $this->infopage->info_pagina_direccion_contacto ?>
+                      </span>
+                    <?php } ?>
+                  </span>
+                  <div class="vr d-none d-xl-inline"></div>
                   <span class="info-header correo ">
                     <?php if ($this->infopage->info_pagina_telefono) { ?>
                       <span class="info-footer d-flex gap-1 align-items-center">
@@ -58,11 +66,10 @@
                       </span>
                     <?php } ?>
                   </span>
-
                 </div>
 
                 <div class="d-flex gap-2 align-items-center ustify-content-start justify-content-lg-end">
-                  <h6 class="m-0 ">Síguenos en</h6>
+                  <h6 class="m-0 ">Follow us on</h6>
                   <div class="icons-redes d-flex gap-1">
 
                     <?php if ($this->infopage->info_pagina_youtube) {
@@ -73,7 +80,7 @@
                           <i class="fa-brands fa-youtube"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_instagram) {
@@ -84,7 +91,7 @@
                           <i class="fa-brands fa-instagram"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_facebook) {
@@ -95,7 +102,7 @@
                           <i class="fa-brands fa-facebook-f"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_linkedin) {
@@ -106,7 +113,7 @@
                           <i class="fa-brands fa-linkedin-in"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_x) {
@@ -117,7 +124,7 @@
                           <i class="fa-brands fa-x-twitter"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_pinterest) {
@@ -128,7 +135,7 @@
                           <i class="fa-brands fa-pinterest-p"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_flickr) {
@@ -139,7 +146,7 @@
                           <i class="fa-brands fa-flickr"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
 
                     <?php if ($this->infopage->info_pagina_tiktok) {
@@ -150,7 +157,7 @@
                           <i class="fa-brands fa-tiktok"></i>
 
                         </a>
-                      <?php }
+                    <?php }
                     } ?>
                     <?php if ($this->infopage->info_pagina_whatsapp) { ?>
                       <a href="https://wa.me/<?php echo $this->infopage->info_pagina_whatsapp ?>?text=Hello%20I%20would%20like%20to%20get%20more%20information"

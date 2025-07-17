@@ -226,7 +226,7 @@ class Administracion_contenidoController extends Administracion_mainController
    */
   public function updateAction()
   {
-    error_reporting(E_ALL);
+    //error_reporting(E_ALL);
 
     $this->setLayout('blanco');
     $csrf = $this->_getSanitizedParam("csrf");

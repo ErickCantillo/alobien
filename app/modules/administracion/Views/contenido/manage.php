@@ -190,6 +190,7 @@
                   </span>
                 </label>
               </div>
+              
               <div class="col-2">
                 <label class="radio-col">
                   <input type="radio" value="col-md-3" <?php if ($this->content->contenido_columna == 'col-md-3') { ?>
@@ -208,6 +209,7 @@
                   </span>
                 </label>
               </div>
+
               <div class="col-2 no-carrousel2 ">
                 <label class="radio-col">
                   <input type="radio" value="col-md-8" <?php if ($this->content->contenido_columna == 'col-md-8') { ?>

@@ -1,8 +1,8 @@
 <h1 class="titulo-principal"><i class="fas fa-cogs"></i> <?php echo $this->titlesection; ?></h1>
 <div class="container-fluid">
 	<form action="<?php echo $this->route; ?><?php if ($this->padre) {
-													echo "?padre=" . $this->padre;
-												} ?>" method="post">
+																							echo "?padre=" . $this->padre;
+																						} ?>" method="post">
 		<div class="content-dashboard">
 			<div class="row">
 				<div class="col-2">
@@ -15,8 +15,8 @@
 							<option value="">Todas</option>
 							<?php foreach ($this->list_contenido_seccion as $key => $value) : ?>
 								<option value="<?= $key; ?>" <?php if ($this->getObjectVariable($this->filters, 'contenido_seccion') ==  $key) {
-																	echo "selected";
-																} ?>><?= $value; ?></option>
+																								echo "selected";
+																							} ?>><?= $value; ?></option>
 							<?php endforeach ?>
 						</select>
 					</label>
@@ -81,23 +81,23 @@
 				<div class="col-1">
 					<select class="form-control form-control-sm selectpagination">
 						<option value="20" <?php if ($this->pages == 20) {
-												echo 'selected';
-											} ?>>20</option>
+																	echo 'selected';
+																} ?>>20</option>
 						<option value="30" <?php if ($this->pages == 30) {
-												echo 'selected';
-											} ?>>30</option>
+																	echo 'selected';
+																} ?>>30</option>
 						<option value="50" <?php if ($this->pages == 50) {
-												echo 'selected';
-											} ?>>50</option>
+																	echo 'selected';
+																} ?>>50</option>
 						<option value="100" <?php if ($this->pages == 100) {
-												echo 'selected';
-											} ?>>100</option>
+																	echo 'selected';
+																} ?>>100</option>
 					</select>
 				</div>
 				<div class="col-3">
 					<div class="text-end"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?><?php if ($this->padre) {
-																																echo "?padre=" . $this->padre;
-																															} ?>"> <i class="fas fa-plus-square"></i> Crear Nuevo</a></div>
+																																																									echo "?padre=" . $this->padre;
+																																																								} ?>"> <i class="fas fa-plus-square"></i> Crear Nuevo</a></div>
 				</div>
 			</div>
 		</div>
@@ -127,39 +127,41 @@
 							<td class="text-end">
 								<div>
 									<?php if ($content->contenido_tipo == 1) { ?>
-										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>"  data-bs-toggle="tooltip" data-placement="top" title="Banners"><i class="fas fa-images"></i></a>
+										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Banners"><i class="fas fa-images"></i></a>
 									<?php } ?>
 									<?php if ($content->contenido_tipo == 2) { ?>
-										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>"  data-bs-toggle="tooltip" data-placement="top" title="Columnas"><i class="fas fa-columns"></i></a>
+										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Columnas"><i class="fas fa-columns"></i></a>
 									<?php } ?>
 									<?php if ($content->contenido_tipo == 6 || $content->contenido_tipo == 7 || $content->contenido_tipo == 8) { ?>
-										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>"  data-bs-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
+										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
 									<?php } ?>
-									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>"  data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>
+									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>
 
-									<?php if ($_SESSION['kt_login_level'] == 1) { ?><span  data-bs-toggle="tooltip" data-placement="top" title="Eliminar"><a class="btn btn-rojo btn-sm"  data-bs-toggle="modal" data-bs-target="#modal<?php echo $id ?>"><i class="fas fa-trash-alt"></i></a></span><?php } ?>
+									<?php if ($_SESSION['kt_login_level'] == 1) { ?><span data-bs-toggle="tooltip" data-placement="top" title="Eliminar"><a class="btn btn-rojo btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?php echo $id ?>"><i class="fas fa-trash-alt"></i></a></span><?php } ?>
 								</div>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="modal<?= $id ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Eliminar registro</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                      <div class="modal-body">
-                        <div class="container-fluid">
-												<div class="">¿Esta seguro de eliminar este registro?</div>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
+
+								<!-- Modal -->
+								<div class="modal fade" id="modal<?= $id ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">Eliminar registro</h5>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<div class="container-fluid">
+													<div class="">¿Esta seguro de eliminar este registro?</div>
+												</div>
+											</div>
+											<div class="modal-footer">
 												<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-												<a class="btn btn-danger" href="<?php echo $this->route; ?>/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php if ($this->padre) { echo "&padre=" . $this->padre; } ?>">Eliminar</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+												<a class="btn btn-danger" href="<?php echo $this->route; ?>/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php if ($this->padre) {
+																																																																		echo "&padre=" . $this->padre;
+																																																																	} ?>">Eliminar</a>
+											</div>
+										</div>
+									</div>
+								</div>
 							</td>
 						</tr>
 					<?php } ?>
@@ -177,23 +179,23 @@
 				<div class="col-1">
 					<select class="form-control form-control-sm selectpagination">
 						<option value="20" <?php if ($this->pages == 20) {
-												echo 'selected';
-											} ?>>20</option>
+																	echo 'selected';
+																} ?>>20</option>
 						<option value="30" <?php if ($this->pages == 30) {
-												echo 'selected';
-											} ?>>30</option>
+																	echo 'selected';
+																} ?>>30</option>
 						<option value="50" <?php if ($this->pages == 50) {
-												echo 'selected';
-											} ?>>50</option>
+																	echo 'selected';
+																} ?>>50</option>
 						<option value="100" <?php if ($this->pages == 100) {
-												echo 'selected';
-											} ?>>100</option>
+																	echo 'selected';
+																} ?>>100</option>
 					</select>
 				</div>
 				<div class="col-3">
 					<div class="text-end"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?><?php if ($this->padre) {
-																																echo "?padre=" . $this->padre;
-																															} ?>"> <i class="fas fa-plus-square"></i> Crear Nuevo</a></div>
+																																																									echo "?padre=" . $this->padre;
+																																																								} ?>"> <i class="fas fa-plus-square"></i> Crear Nuevo</a></div>
 				</div>
 			</div>
 		</div>

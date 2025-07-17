@@ -1,6 +1,6 @@
 <div class="slider-principal" data-aos="">
-  <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel  carousel-fade"
-    data-bs-ride="">
+  <div id="carouselprincipal<?php echo $this->seccionbanner; ?>" class="carousel slide carousel-fade"
+    data-bs-ride="carousel">
 
     <?php if (count($this->banners) >= 2) { ?>
 
@@ -8,10 +8,8 @@
         <?php foreach ($this->banners as $key => $banner) { ?>
 
           <button type="button" data-bs-target="#carouselprincipal<?php echo $this->seccionbanner; ?>"
-            data-bs-slide-to="<?php echo $key ?>" <?php if (
-                 $key == 0
-               ) { ?>class="active" <?php } ?> aria-current="true"
-            aria-label="Slide <?php echo $key ?>"></button>
+            data-bs-slide-to="<?php echo $key ?>" <?php if ($key == 0) { ?>class="active" aria-current="true" <?php } ?>
+            aria-label="Slide <?php echo $key + 1 ?>"></button>
 
         <?php } ?>
 
@@ -33,10 +31,10 @@
               <a href="<?php echo $banner->publicidad_video; ?>" data-fancybox="video-gallery">
 
 
-                <img src="/images/<?php echo $banner->publicidad_imagen; ?>" alt="<?php echo $banner->publicidad_nombre; ?>"
-                  class="d-none d-md-block">
+                <img src="/images/<?php echo $banner->publicidad_imagen; ?>" alt="Banner image <?php echo $banner->publicidad_nombre; ?>"
+                  class="d-none d-md-block img-banner">
                 <img src="/images/<?php echo $banner->publicidad_imagenresponsive; ?>"
-                  alt="<?php echo $banner->publicidad_nombre; ?>" class="d-block d-md-none">
+                  alt="Banner image <?php echo $banner->publicidad_nombre; ?>" class="d-block d-md-none img-banner">
                 <div class="play-icon">▶️</div>
               </a>
             </div>
@@ -51,7 +49,7 @@
                 <?php } ?>
 
                 <img src="/images/<?php echo $banner->publicidad_imagen; ?>"
-                  alt="Imagen banner <?php echo $banner->publicidad_nombre; ?>" class="img-banner">
+                  alt="Banner image <?php echo $banner->publicidad_nombre; ?>" class="img-banner">
 
 
 
@@ -66,7 +64,7 @@
                       <?php echo $banner->publicidad_descripcion; ?>
                       <?php if ($banner->publicidad_enlace) { ?>
                         <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="btn-blue">
-                          <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'Ver más'; ?>
+                          <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'See more'; ?>
                         </a>
                       <?php } ?>
                     </div>
@@ -74,7 +72,7 @@
                       <div class="sub-banners-content">
                         <h3 class="mt-4 titulo-sub-banners">
                           <i class="fa-regular fa-circle-check"></i>
-                          Nuestros Servicios
+                          Our Services
                         </h3>
                         <div class="sub-banners row gap-2">
                           <?php foreach ($banner->subBanners as $subBanner) { ?>
@@ -84,7 +82,7 @@
                                   alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
                                 <div class="contenido-sub-banner">
                                   <span class="texto-sub-banner">
-                                    <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
+                                    <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'See more'; ?>
                                   </span>
                                   <span class="icono-sub-banner">
                                     <i class="fa-solid fa-angle-right"></i>
@@ -121,7 +119,7 @@
                       <?php echo $banner->publicidad_descripcion; ?>
                       <?php if ($banner->publicidad_enlace) { ?>
                         <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="btn-blue">
-                          <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'Ver más'; ?>
+                          <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'See more'; ?>
                         </a>
                       <?php } ?>
                     </div>
@@ -129,7 +127,7 @@
                       <div class="sub-banners-responsive">
                         <h3 class="mt-4 titulo-sub-banners">
                           <i class="fa-regular fa-circle-check"></i>
-                          Nuestros Servicios
+                          Our Services
                         </h3>
                         <div class="sub-banners row gap-0 gap-lg-2">
                           <?php foreach ($banner->subBanners as $subBanner) { ?>
@@ -139,7 +137,7 @@
                                   alt="Imagen sub-banner <?php echo $subBanner->publicidad_nombre; ?>" class="img-subbanner">
                                 <div class="contenido-sub-banner">
                                   <span class="texto-sub-banner">
-                                    <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'Ver más'; ?>
+                                    <?php echo $subBanner->publicidad_texto_enlace ? $subBanner->publicidad_texto_enlace : 'See more'; ?>
                                   </span>
                                   <span class="icono-sub-banner">
                                     <i class="fa-solid fa-angle-right"></i>
@@ -195,12 +193,14 @@
   });
 
   // Inicializar carousel manualmente si es necesario
-  document.addEventListener('DOMContentLoaded', function () {
-    var carouselElement = document.querySelector('#carouselprincipal<?php echo $this->seccionbanner; ?>');
+  document.addEventListener('DOMContentLoaded', function() {
+    var carouselId = 'carouselprincipal<?php echo $this->seccionbanner; ?>';
+    var carouselElement = document.getElementById(carouselId);
     if (carouselElement) {
       var carousel = new bootstrap.Carousel(carouselElement, {
         interval: 5000,
-        wrap: true
+        wrap: true,
+        ride: 'carousel'
       });
     }
   });

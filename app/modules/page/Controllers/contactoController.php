@@ -26,7 +26,7 @@ class Page_contactoController extends Page_mainController
     $company = $this->sanitizarEntrada($data['company']);
     if ($company && $company != "") {
       $res = [];
-      $res['error'] = "Token inválido.";
+      $res['error'] = "Invalid token.";
       $res['status'] = "error";
       echo json_encode($res);
       exit;
@@ -36,7 +36,7 @@ class Page_contactoController extends Page_mainController
     $hash2 = md5(date("Y-m-d"));
     if ($hash2 !== $hash) {
       $res = [];
-      $res['error'] = "Token inválido.";
+      $res['error'] = "Invalid token.";
       $res['status'] = "error";
       echo json_encode($res);
       exit;
@@ -45,7 +45,7 @@ class Page_contactoController extends Page_mainController
     $g_recaptcha_response = $this->sanitizarEntrada($data['g-recaptcha-response']);
     if (!$this->verifyCaptcha($g_recaptcha_response)) {
       $res = [];
-      $res['error'] = "Token inválido.";
+      $res['error'] = "Invalid token.";
       $res['status'] = "error";
       echo json_encode($res);
       exit;
@@ -53,7 +53,7 @@ class Page_contactoController extends Page_mainController
 
     if (!$name || !$phone || !$email || !$reason || !$message) {
       $res = [];
-      $res['error'] = "Todos los campos son obligatorios.";
+      $res['error'] = "All fields are required.";
       $res['status'] = "error";
       echo json_encode($res);
       exit;
@@ -69,7 +69,7 @@ class Page_contactoController extends Page_mainController
     $mail_response = $mail->sendMailContactForm($data2);
     if ($mail_response == 2) {
       $res = [];
-      $res['error'] = "Error al enviar el correo.";
+      $res['error'] = "Error sending email.";
       $res['status'] = "error";
       echo json_encode($res);
       exit;

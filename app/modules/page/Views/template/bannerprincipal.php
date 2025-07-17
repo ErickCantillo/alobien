@@ -7,8 +7,8 @@
         <?php foreach ($this->banners as $key => $banner) { ?>
           <button type="button" data-bs-target="##carouselprincipal<?php echo $this->seccionbanner; ?>"
             data-bs-slide-to="<?php echo $key ?>" <?php if (
-                 $key == 0
-               ) { ?>class="active" <?php } ?> aria-current="true"
+                                                    $key == 0
+                                                  ) { ?>class="active" <?php } ?> aria-current="true"
             aria-label="Slide <?php echo $key ?>"></button>
         <?php } ?>
       </div>
@@ -38,7 +38,7 @@
                   <?php echo $banner->publicidad_descripcion; ?>
                   <?php if ($banner->publicidad_enlace) { ?>
                     <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="btn-blue">
-                      <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'Ver más'; ?>
+                      <?php echo $banner->publicidad_texto_enlace ? $banner->publicidad_texto_enlace : 'See more'; ?>
                     </a>
                   <?php } ?>
                 </div>

@@ -25,7 +25,7 @@ echo $this->banner;
     <div class="masonry-column"></div>
   </div>
 
-  <!-- Items ocultos que se distribuirán por JavaScript -->
+  <!-- Hidden items that will be distributed by JavaScript -->
   <div class="masonry-items-hidden" style="display: none;">
     <?php foreach ($this->albumes as $index => $album) { ?>
       <div class="masonry-item" data-album-id="<?= $album->album_id ?>">
@@ -37,7 +37,7 @@ echo $this->banner;
         <a data-fancybox="gallery<?= $album->album_id ?>" data-src="<?= $album_imagen_src ?>"
           data-caption="<?= $album->album_descripcion ?>">
           <img src="<?= $album_imagen_src ?>" class="img-fluid portada"
-            alt="Portada album <?= $album->album_nombre ?> " />
+            alt="Album cover <?= $album->album_nombre ?> " />
         </a>
         <?php foreach ($album->fotos as $foto) { ?>
           <?php
@@ -47,7 +47,7 @@ echo $this->banner;
           ?>
           <a data-fancybox="gallery<?= $album->album_id ?>" data-src="<?= $foto_src ?>"
             data-caption="<?= $foto->fotos_descripcion ?>" class="d-none">
-            <img src="<?= $foto_src ?>" class="img-fluid imagen" alt="Imagen <?= $foto->fotos_titulo ?>  " />
+            <img src="<?= $foto_src ?>" class="img-fluid imagen" alt="Image <?= $foto->fotos_titulo ?>  " />
           </a>
         <?php } ?>
         <h5 class="mt-2 titulo-album"><?= $album->album_nombre ?></h5>
@@ -62,16 +62,16 @@ echo $this->banner;
       <!-- Información de paginación -->
       <div class="pagination-info text-center mb-3">
         <small class="text-muted">
-          Mostrando <?= $this->startItem ?> - <?= $this->endItem ?> de <?= $this->totalItems ?> álbumes
+          Showing <?= $this->startItem ?> - <?= $this->endItem ?> of <?= $this->totalItems ?> albums
         </small>
       </div>
 
-      <nav aria-label="Paginación de galería">
+      <nav aria-label="Gallery pagination">
         <ul class="pagination justify-content-center">
           <?php if ($this->page > 1) { ?>
             <li class="page-item">
               <a class="page-link" href="?page=<?= $this->page - 1 ?>">
-                <i class="fas fa-chevron-left"></i> Anterior
+                <i class="fas fa-chevron-left"></i> Previous
               </a>
             </li>
           <?php } ?>
@@ -85,7 +85,7 @@ echo $this->banner;
           <?php if ($this->page < $this->totalPages) { ?>
             <li class="page-item">
               <a class="page-link" href="?page=<?= $this->page + 1 ?>">
-                Siguiente <i class="fas fa-chevron-right"></i>
+                Next <i class="fas fa-chevron-right"></i>
               </a>
             </li>
           <?php } ?>
