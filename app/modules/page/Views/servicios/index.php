@@ -14,6 +14,6 @@
   }
 </style>
 <?php echo $this->banner ?>
-<div class="contenido-servicios">
+<div class="contenido-servicios contenido-interna">
   <?php echo $this->contenido ?>
 </div>

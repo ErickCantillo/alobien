@@ -182,6 +182,7 @@ class Administracion_contenidoController extends Administracion_mainController
    */
   public function insertAction()
   {
+    error_reporting(E_ALL);
     $this->setLayout('blanco');
     $csrf = $this->_getSanitizedParam("csrf");
     if (Session::getInstance()->get('csrf')[$this->_getSanitizedParam("csrf_section")] == $csrf) {
@@ -225,6 +226,8 @@ class Administracion_contenidoController extends Administracion_mainController
    */
   public function updateAction()
   {
+    error_reporting(E_ALL);
+
     $this->setLayout('blanco');
     $csrf = $this->_getSanitizedParam("csrf");
     if (Session::getInstance()->get('csrf')[$this->_getSanitizedParam("csrf_section")] == $csrf) {
