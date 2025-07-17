@@ -12,9 +12,9 @@ class Page_galeriaController extends Page_mainController
     $fotosModel = new Administracion_Model_DbTable_Fotos();
     $albumModel = new Administracion_Model_DbTable_Album();
 
-    // Configuración de paginación
-    $itemsPerPage = 9;
-    $page = $this->_getSanitizedParam("page");
+    // Configuración de paginación - optimizada para masonry
+    $itemsPerPage = 9; // Número divisible por 3 para mejor distribución
+    $page = (int) $this->_getSanitizedParam("page");
 
     // Obtener todos los álbumes para calcular el total
     $allAlbumes = $albumModel->getList("album_estado ='1'", "orden ASC");
@@ -31,6 +31,7 @@ class Page_galeriaController extends Page_mainController
     } elseif ($totalPages == 0) {
       // Si no hay álbumes, mostrar página 1
       $page = 1;
+      $totalPages = 1;
     }
 
     $start = ($page - 1) * $itemsPerPage;
@@ -38,6 +39,7 @@ class Page_galeriaController extends Page_mainController
     // Obtener álbumes paginados
     $albumes = $albumModel->getListPages("album_estado ='1'", "orden ASC", $start, $itemsPerPage);
 
+    // Procesar cada álbum y sus fotos
     foreach ($albumes as $key => $album) {
       $fotos = $fotosModel->getList("fotos_album = '{$album->album_id}' AND fotos_estado ='1'", "orden ASC");
       $album->fotos = $fotos;
@@ -49,5 +51,11 @@ class Page_galeriaController extends Page_mainController
     $this->_view->totalPages = $totalPages;
     $this->_view->itemsPerPage = $itemsPerPage;
     $this->_view->totalItems = $totalAlbumes;
+
+    // Variables adicionales útiles para el frontend
+    $this->_view->hasNextPage = $page < $totalPages;
+    $this->_view->hasPrevPage = $page > 1;
+    $this->_view->startItem = $start + 1;
+    $this->_view->endItem = min($start + $itemsPerPage, $totalAlbumes);
   }
 }

@@ -4,6 +4,7 @@
   src: url('/assets/fonts/Domus_Ultralight.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   src: url('/assets/fonts/Domus_Extralight.otf') format('opentype');
   font-weight: 200;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
   src: url('/assets/fonts/Domus_Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +28,7 @@
   src: url('/assets/fonts/Domus.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,6 +36,7 @@
   src: url('/assets/fonts/Domus_Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -39,6 +44,7 @@
   src: url('/assets/fonts/Domus_Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -55,7 +61,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Domus', sans-serif;
-  font-weight: 300;
+  /* font-weight: 200; */
 
   position: relative;
   /* border: 1px solid red;  */
@@ -81,6 +87,17 @@ body {
   padding: 0 !important;
   padding-right: 0 !important;
   height: 100dvh;
+}
+
+body {
+  font-weight: 300;
+  /* Light como base */
+}
+
+strong,
+b {
+  font-weight: 700;
+  /* Bold para títulos o énfasis */
 }
 
 .btn-amarillo {
@@ -154,8 +171,8 @@ header {
 
 header .nav-link {
   color: var(--tertiary-color);
-  font-size: 19px;
-  font-weight: 500 ;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 header .nav-link:hover {
@@ -167,7 +184,7 @@ header .nav-link.active {
 }
 
 header .navbar-nav {
-  gap: 5%;
+  gap: 3%;
 }
 
 /* FOOTER */
@@ -213,6 +230,65 @@ footer .icons-redes a i {
   width: 26px;
   display: grid;
   place-items: center;
+}
+
+header h6 {
+  font-size: 15px;
+  color: var(--tertiary-color);
+}
+
+header .icons-redes a {
+  text-decoration: none;
+}
+
+
+header .icons-redes a i {
+  background-color: var(--tertiary-color);
+  color: var(--accent-color);
+  padding: 5px;
+  border-radius: 5px;
+  aspect-ratio: 1 / 1;
+  width: 26px;
+  display: grid;
+  place-items: center;
+  transition: all 300ms ease;
+}
+
+header .icons-redes a:hover i {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
+header .icons-redes a.whatsapp i {
+  background-color: #25D366;
+
+}
+
+.info-header span {
+  color: var(--primary-color);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.info-header i {
+  margin-bottom: -5px;
+}
+
+.info-header a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.info-header.correo {
+  color: var(--primary-color);
+}
+
+.offcanvas-body {
+  align-items: center;
 }
 
 /* -------------------
@@ -550,7 +626,7 @@ FLOTANTES FIN
   aspect-ratio: 1/1;
 }
 
-.caja-contenido-simple .descripcion {
+.contenido-home .caja-contenido-simple .descripcion {
   margin-top: 15px;
 }
 
@@ -609,12 +685,12 @@ FLOTANTES FIN
   color: var(--primary-color);
 }
 
-.id_20 .design-two .col-sm-8 {
+.id_20 .design-two .col-md-7 {
   display: grid;
   place-items: center;
 }
 
-.id_20 .design-two .col-sm-8 .descripcion p::after {
+.id_20 .design-two .col-md-7 .descripcion p::after {
   content: "";
   display: block;
   background-image: url(/assets/ComillasFrase.png);
@@ -733,28 +809,146 @@ INICIO GALERIA
   align-items: center;
 }
 
-.contenedor-galeria .col {
-  margin-bottom: 20px;
+/* Diseño Masonry - 3 columnas con JavaScript */
+.masonry-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.masonry-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.masonry-item {
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px);
+}
+
+.masonry-item img.portada {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.masonry-item:hover img.portada {
+  transform: scale(1.02);
 }
 
 .contenedor-galeria .portada {
-  border-radius: 10px;
-  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  border-radius: 12px;
+  transition: transform 300ms ease-in-out,
+    box-shadow 300ms ease-in-out;
   cursor: pointer;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
 }
 
 .contenedor-galeria .portada:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1px 5px 0 hsla(0, 0%, 0%, 0.8);
-
+  transform: scale(1.02);
 }
 
-
 .titulo-album {
-  font-size: 20px;
   font-weight: 600;
   text-align: center;
   color: var(--tertiary-color);
+  /* padding: 15px 20px; */
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive para masonry */
+@media (max-width: 768px) {
+  .masonry-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Estilos para paginación específicos de galería */
+.contenedor-galeria .pagination-info {
+  margin-bottom: 1rem;
+}
+
+.contenedor-galeria .pagination-info small {
+  font-size: 0.9rem;
+  color: var(--gris-medio);
+}
+
+.contenedor-galeria .pagination {
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contenedor-galeria .pagination .page-link {
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 0.75rem;
+  margin: 0.125rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+/* Responsive para paginación */
+@media (max-width: 768px) {
+  .contenedor-galeria .pagination .page-link {
+    font-size: 1rem;
+    margin: 0.0625rem;
+  }
+
+  .contenedor-galeria .pagination .page-item:not(.active):not(:first-child):not(:last-child) {
+    display: none;
+  }
+
+  .contenedor-galeria .pagination .page-item.active,
+  .contenedor-galeria .pagination .page-item:first-child,
+  .contenedor-galeria .pagination .page-item:last-child {
+    display: inline-block;
+  }
+
+  /* Mostrar algunas páginas cercanas en móvil */
+  .contenedor-galeria .pagination .page-item.active+.page-item,
+  .contenedor-galeria .pagination .page-item.active+.page-item+.page-item,
+  .contenedor-galeria .pagination .page-item:first-child+.page-item,
+  .contenedor-galeria .pagination .page-item:last-child:nth-child(n+3) {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-galeria .pagination {
+    margin-top: 1.5rem;
+    gap: 5px;
+  }
+
+  /* En pantallas muy pequeñas, mostrar solo prev/next y página actual */
+  .contenedor-galeria .pagination .page-item:not(.active):not(:first-child):not(:last-child) {
+    display: none;
+  }
+}
+
+/* Estilos para Fancybox */
+.fancybox__nav {
+  position: static;
 }
 
 .pagination .page-item.active .page-link {
@@ -772,3 +966,85 @@ INICIO GALERIA
 /* ********************
 FIN GALERIA
 *************************** */
+
+/* NOSOTROS */
+.contenido-nosotros .caja-contenido-simple img {
+  border-radius: 10px;
+}
+
+.contenido-nosotros .caja-contenido-simple>h2 {
+  color: var(--gris-medio);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.btn-vermas {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  border: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  line-height: 1;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+}
+
+.btn-vermas:hover {
+  background-color: var(--tertiary-color);
+  color: var(--accent-color);
+}
+
+.contenido-nosotros .caja-contenido-simple {
+  /* margin-top: 15px; */
+}
+
+.contenido-nosotros .caja-contenido-simple .img-fluid {
+  display: block;
+  margin: 0 auto;
+}
+
+.contenido-nosotros .design-four {
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin-bottom: 1.5rem; */
+      gap: 5px;
+}
+
+.contenido-interna .contenedor-seccion {
+  padding: 15px 0;
+}
+
+.contenedor-contacto {
+  padding: 20px 0;
+}
+
+.descripcion-seccion>p {
+  margin: 0;
+}
+
+.contenido-nosotros .caja-contenido-simple .descripcion {
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.id_32 .design-four .imagen-contenido img {
+  aspect-ratio: 2/3;
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.id_32 .columna-seccion{
+  margin-bottom: 1.5rem;
+}

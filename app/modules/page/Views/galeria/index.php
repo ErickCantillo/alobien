@@ -5,30 +5,30 @@
     border-bottom: 1px solid var(--gris-claro);
   }
 
-  .main-general {
-    /* margin-top: 130px; */
+  body {
+    height: auto;
   }
 </style>
 <?php
 echo $this->banner;
 ?>
+<div class="contenido-galeria contenido-interna">
+  <?php
+  echo $this->contenido;
+  ?>
+</div>
 
-<?php
-echo $this->contenido;
-?>
-
-<?php
-// echo "<pre>";
-
-// print_r($this->albumes);
-// echo "</pre>";
-
-?>
 <div class="container contenedor-galeria mt-3">
-  <div class="row">
+  <div class="masonry-gallery" id="masonryGallery">
+    <div class="masonry-column"></div>
+    <div class="masonry-column"></div>
+    <div class="masonry-column"></div>
+  </div>
 
-    <?php foreach ($this->albumes as $album) { ?>
-      <div class="col col-12 col-md-6 col-lg-4">
+  <!-- Items ocultos que se distribuirán por JavaScript -->
+  <div class="masonry-items-hidden" style="display: none;">
+    <?php foreach ($this->albumes as $index => $album) { ?>
+      <div class="masonry-item" data-album-id="<?= $album->album_id ?>">
         <?php
 
         $album_imagen_path = IMAGE_PATH . $album->album_imagen;
@@ -59,6 +59,12 @@ echo $this->contenido;
   <!-- Paginación -->
   <?php if ($this->totalPages > 1) { ?>
     <div class="mt-1">
+      <!-- Información de paginación -->
+      <div class="pagination-info text-center mb-3">
+        <small class="text-muted">
+          Mostrando <?= $this->startItem ?> - <?= $this->endItem ?> de <?= $this->totalItems ?> álbumes
+        </small>
+      </div>
 
       <nav aria-label="Paginación de galería">
         <ul class="pagination justify-content-center">
@@ -90,97 +96,6 @@ echo $this->contenido;
 
 </div>
 
-
-<style>
-  .main-general {
-    background-color: #f7f7f7;
-  }
-
-  .fancybox__nav {
-    /* position: absolute !important; */
-    position: static;
-  }
-
-  .contenedor-galeria * {
-    /* position: unset !important; */
-  }
-
-  /* Estilos para paginación */
-  .pagination {
-    margin-top: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .pagination .page-link {
-    color: #6c757d;
-    border: 1px solid #dee2e6;
-    padding: 0.5rem 0.75rem;
-    margin: 0.125rem;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease;
-    font-size: 0.875rem;
-  }
-
-  /* Responsive para paginación */
-  @media (max-width: 768px) {
-    .pagination .page-link {
-
-      font-size: 1rem;
-      margin: 0.0625rem;
-    }
-
-    .pagination .page-item:not(.active):not(:first-child):not(:last-child) {
-      display: none;
-    }
-
-    .pagination .page-item.active,
-    .pagination .page-item:first-child,
-    .pagination .page-item:last-child {
-      display: inline-block;
-    }
-
-    /* Mostrar algunas páginas cercanas en móvil */
-    .pagination .page-item.active+.page-item,
-    .pagination .page-item.active+.page-item+.page-item,
-    .pagination .page-item:first-child+.page-item,
-    .pagination .page-item:last-child:nth-child(n+3) {
-      display: inline-block;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .pagination {
-      margin-top: 1.5rem;
-      gap: 5px;
-    }
-
-
-
-    /* En pantallas muy pequeñas, mostrar solo prev/next y página actual */
-    .pagination .page-item:not(.active):not(:first-child):not(:last-child) {
-      display: none;
-    }
-  }
-
-
-  .portada {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .portada:hover {
-    transform: scale(1.05);
-  }
-</style>
-
-
-<script>
-  Fancybox.bind("[data-fancybox]", {
-
-    initialSize: "fit",
-
-  });
-</script>
 <!--
 80212302
  t3267702

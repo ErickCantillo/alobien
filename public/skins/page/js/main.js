@@ -57,6 +57,9 @@ $(document).ready(function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar galería masonry si existe
+  initGalleryMasonry();
+
   const animaciones = [
     "fade-up",
     //  "fade-down",
@@ -160,8 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   /* ------------------------------------------------------ */
   /* --------------------- FORMULARIO CONTACTO PÁGINA ---------------- */
@@ -243,3 +244,97 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
+
+/* ------------------------------------------------------ */
+/* --------------------- GALERÍA MASONRY --------------- */
+/* ------------------------------------------------------ */
+
+// Función para inicializar Fancybox en la galería
+function initFancyboxGallery() {
+  if (typeof Fancybox !== "undefined") {
+    // Destruir instancias previas
+    Fancybox.destroy();
+
+    // Inicializar Fancybox con configuración específica
+    Fancybox.bind("[data-fancybox]", {
+      initialSize: "fit",
+      // Configuraciones adicionales para mejor rendimiento
+      hideScrollbar: false,
+      placeFocusBack: false,
+      trapFocus: false,
+    });
+  }
+}
+
+// Función para distribuir elementos en masonry
+function initMasonry() {
+  const gallery = document.getElementById("masonryGallery");
+  if (!gallery) return; // Solo ejecutar si estamos en la página de galería
+
+  const columns = gallery.querySelectorAll(".masonry-column");
+  const items = document.querySelectorAll(
+    ".masonry-items-hidden .masonry-item"
+  );
+
+  // Limpiar columnas
+  columns.forEach((col) => (col.innerHTML = ""));
+
+  // Distribuir elementos en columnas usando movimiento en lugar de clonación
+  items.forEach((item, index) => {
+    const columnIndex = index % columns.length;
+    // Mover el elemento original en lugar de clonarlo
+    columns[columnIndex].appendChild(item);
+  });
+
+  // Reinicializar Fancybox después de redistribuir
+  setTimeout(initFancyboxGallery, 100);
+}
+
+// Función para redistribuir en responsive
+function redistributeOnResize() {
+  const gallery = document.getElementById("masonryGallery");
+  if (!gallery) return;
+
+  const currentColumns =
+    window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+
+  // Verificar si realmente necesitamos redistribuir
+  const existingColumns = gallery.querySelectorAll(".masonry-column").length;
+  if (existingColumns === currentColumns) return;
+
+  // Mover todos los elementos de vuelta al contenedor oculto antes de redistribuir
+  const hiddenContainer = document.querySelector(".masonry-items-hidden");
+  const allItems = gallery.querySelectorAll(".masonry-item");
+
+  // Mover elementos de vuelta al contenedor oculto
+  allItems.forEach((item) => {
+    hiddenContainer.appendChild(item);
+  });
+
+  // Actualizar número de columnas
+  gallery.innerHTML = "";
+  for (let i = 0; i < currentColumns; i++) {
+    const column = document.createElement("div");
+    column.className = "masonry-column";
+    gallery.appendChild(column);
+  }
+
+  // Redistribuir elementos
+  initMasonry();
+}
+
+// Inicializar galería masonry
+function initGalleryMasonry() {
+  if (document.getElementById("masonryGallery")) {
+    initMasonry();
+
+    // Redistribuir en cambios de tamaño con debounce para mejor rendimiento
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(redistributeOnResize, 100);
+    });
+  }
+}
+
+initGalleryMasonry();

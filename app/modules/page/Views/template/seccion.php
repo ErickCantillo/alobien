@@ -25,7 +25,7 @@
 		<?php } ?>
 		<?php if (is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0) { ?>
 			<div
-				class="mt-3 mt-md-3 row 
+				class=" row 
 	<?php switch ($contenedor->contenido_columna_alineacion) {
 		case 2: ?>justify-content-center text-center<?php break;
 		case 3: ?> justify-content-end text-end<?php break;
@@ -37,7 +37,7 @@
 
 				<?php foreach ($rescontenido['hijos'] as $key => $rescolumna): ?>
 					<?php $columna = $rescolumna['detalle']; ?>
-					<div class="<?php echo $columna->contenido_columna; ?>">
+					<div class="columna-seccion <?php echo $columna->contenido_columna; ?>">
 						<?php if ($columna->contenido_tipo == 5) { ?>
 							<?php $contenido = $columna; ?>
 							<?php if ($columna->contenido_disenio == 1) { ?>

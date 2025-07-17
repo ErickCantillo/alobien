@@ -1,3 +1,12 @@
+<style>
+  .info-no-home {
+    display: none;
+  }
+
+  .offcanvas-body .navbar-nav {
+    justify-content: start !important;
+  }
+</style>
 <?php echo $this->banner ?>
 <div class="contenido-home">
   <?php echo $this->contenido ?>
@@ -6,6 +15,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const header = document.getElementById("mainHeader");
+    const infoHeader = document.getElementById("info-no-home");
     const threshold = 50;
 
     function handleStickyHeader () {
@@ -13,8 +23,14 @@
       if (window.innerWidth > 991) {
         if (window.scrollY > threshold) {
           header.classList.add("sticky-active");
+          if (infoHeader) {
+            infoHeader.style.display = "block"; // Mostrar info-header
+          }
         } else {
           header.classList.remove("sticky-active");
+          if (infoHeader) {
+            infoHeader.style.display = "none"; // Ocultar info-header
+          }
         }
       } else {
         // Remover sticky en pantallas menores o iguales a 991px

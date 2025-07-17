@@ -382,7 +382,7 @@
               <span class="input-group-text input-icono  fondo-azul-claro "><i class="fas fa-pencil-alt"></i></span>
             </div>
             <input type="text" value="<?= $this->content->contenido_fondo_color; ?>" name="contenido_fondo_color"
-              id="contenido_fondo_color" class="form-control">
+              id="contenido_fondo_color" class="form-control colorpicker">
           </label>
           <div class="help-block with-errors"></div>
         </div>

@@ -4,18 +4,22 @@
     background-color: #FFF;
     border-bottom: 1px solid var(--gris-claro);
   }
+   body {
+    height: auto;
+  }
+
 
   .main-general {
     /* margin-top: 130px; */
   }
 </style>
 <?php echo $this->banner ?>
-<div class="contenido-contacto">
+<div class="contenido-contacto contenido-interna">
   <?php echo $this->contenido ?>
 </div>
 
 <!-- Formulario de Contacto -->
-<div class="container my-5">
+<div class="container contenedor-contacto">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6 order-2 order-lg-1">
       <div class="card shadow-lg">

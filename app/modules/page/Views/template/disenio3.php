@@ -21,7 +21,7 @@
   <?php } ?>
   <?php if($contenido->contenido_imagen){ ?>
   <div class="imagen-contenido">
-    <div><img src="/images/<?php echo $contenido->contenido_imagen; ?>"></div>
+    <img src="/images/<?php echo $contenido->contenido_imagen; ?> " class="img-fluid">
   </div>
   <?php if($contenido->contenido_borde != '1'){ ?>
   </br>
