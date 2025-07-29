@@ -12,10 +12,10 @@ class Page_indexController extends Page_mainController
   {
     $this->_view->banner = $this->template->bannerPrincipalInd(1);
     $this->_view->contenido = $this->template->getContentseccion(1);
+
   }
   public function enviarsubAction()
   {
-
 
     // Recibir los datos enviados en formato JSON
     $input = file_get_contents('php://input');

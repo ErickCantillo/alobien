@@ -10,9 +10,6 @@
   }
 
 
-  .main-general {
-    /* margin-top: 130px; */
-  }
 </style>
 <?php echo $this->banner ?>
 <div class="contenido-contacto contenido-interna">

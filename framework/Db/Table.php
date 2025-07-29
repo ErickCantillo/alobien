@@ -71,6 +71,7 @@ abstract class Db_Table
     $query = ' UPDATE ' . $this->_name . ' SET ' . $field . ' = "' . $value . '" WHERE ' . $this->_id . ' = "' . $id . '"';
     $res = $this->_conn->query($query);
   }
+  
   public function getListCount($filters = "", $order = "")
   {
     $filter = '';

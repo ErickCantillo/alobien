@@ -82,4 +82,6 @@ class Administracion_Model_DbTable_Contenido extends Db_Table
 		 $query = "UPDATE contenido SET  contenido_seccion = '$contenido_seccion', contenido_tipo = '$contenido_tipo', contenido_padre = '$contenido_padre', contenido_columna = '$contenido_columna', contenido_columna_espacios = '$contenido_columna_espacios', contenido_disenio = '$contenido_disenio', contenido_borde = '$contenido_borde', contenido_estado = '$contenido_estado', contenido_fecha = '$contenido_fecha', contenido_titulo = '$contenido_titulo', contenido_titulo_ver = '$contenido_titulo_ver', contenido_imagen = '$contenido_imagen', contenido_archivo = '$contenido_archivo', contenido_fondo_imagen = '$contenido_fondo_imagen', contenido_fondo_imagen_tipo = '$contenido_fondo_imagen_tipo', contenido_fondo_color = '$contenido_fondo_color', contenido_introduccion = '$contenido_introduccion', contenido_descripcion = '$contenido_descripcion', contenido_enlace = '$contenido_enlace', contenido_vermas = '$contenido_vermas', contenido_columna_alineacion = '$contenido_columna_alineacion',contenido_enlace_abrir = '$contenido_enlace_abrir' WHERE contenido_id = '".$id."'";
 		$res = $this->_conn->query($query);
 	}
+
+	
 }
