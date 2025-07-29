@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<?= $recaptcha_lang ?>">
 
 <head>
   <meta charset="UTF-8">
@@ -56,11 +56,22 @@
   <!-- metacolor -->
   <meta name="theme-color" content="#5475a1">
   <!-- Recaptcha -->
-  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <?php 
+    // Obtener el idioma actual para reCAPTCHA
+    $lang_selected = 'es';
+    if(isset($_GET['lang'])){
+      $lang_selected = $_GET['lang'];
+    } else if (isset($_COOKIE['user_lang'])) {
+      $lang_selected = $_COOKIE['user_lang'];
+    }
+    // Mapear idiomas a códigos de reCAPTCHA
+    $recaptcha_lang = $lang_selected == 'en' ? 'en' : 'es';
+  ?>
+  <script src='https://www.google.com/recaptcha/api.js?hl=<?= $recaptcha_lang ?>'></script>
   <meta name="description" content="<?= $this->_data['meta_description']; ?>" />
   <meta name=" keywords" content="<?= $this->_data['meta_keywords']; ?>" />
   <?php echo $this->_data['scripts']; ?>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?hl=<?= $recaptcha_lang ?>" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWYVxdF4VwIPfmB65X2kMt342GbUXApwQ&sensor=true"></script>

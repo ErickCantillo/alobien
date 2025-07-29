@@ -9,7 +9,7 @@
 			<?php }?>
 			<div class="row">
 				<div class="col-6 form-group">
-					<label for="noticia_fecha"  class="control-label">Fecha</label>
+					<label for="noticia_fecha"  class="control-label">Date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rosado " ><i class="fas fa-pencil-alt"></i></span>
@@ -19,7 +19,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="noticia_titulo"  class="control-label">Titulo</label>
+					<label for="noticia_titulo"  class="control-label">Title</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-verde-claro " ><i class="fas fa-pencil-alt"></i></span>
@@ -31,8 +31,8 @@
 			</div>
 		</div>
 		<div class="botones-acciones">
-			<button class="btn btn-guardar" type="submit">Guardar</button>
-			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+			<button class="btn btn-guardar" type="submit">Save</button>
+			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
 		</div>
 	</form>
 </div>

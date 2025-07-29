@@ -5,23 +5,23 @@
         <img src="/assets/LogoFooter.png" alt="Logo Alobien" class="img-fluid d-block m-auto">
       </div>
       <div class="col-12 col-lg-4">
-        <h5><strong>Subscribe now</strong> <span> for more information</span></h5>
+        <h5><strong><?= $this->len['subscribe_now'] ?></strong> <span><?= $this->len['for_more_information'] ?></span></h5>
         <form action="/page/index/enviarsub" class="formulario-footer" method="post" id="form-contact">
-          <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
-          <input type="number" name="phone" class="form-control mb-2" placeholder="Phone" required>
+          <input type="text" name="name" class="form-control mb-2" placeholder="<?= $this->len['name'] ?>" required>
+          <input type="number" name="phone" class="form-control mb-2" placeholder="<?= $this->len['phone'] ?>" required>
 
           <input type="hidden" name="company" class="form-control mb-2" placeholder="Company">
           <input name="hash" type="hidden" value="<?php echo md5(date("Y-m-d")); ?>" />
 
-          <input type="email" name="email" class="form-control mb-2" placeholder="Email" required>
+          <input type="email" name="email" class="form-control mb-2" placeholder="<?= $this->len['email'] ?>" required>
 
           <div class="g-recaptcha mb-2" data-sitekey="6LfFDZskAAAAAE2HmM7Z16hOOToYIWZC_31E61Sr"></div>
 
-          <input type="submit" id="submit-btn" class="btn-amarillo" value="Send >>">
+          <input type="submit" id="submit-btn" class="btn-amarillo" value="<?= $this->len['send'] ?>">
         </form>
       </div>
       <div class="col-12 col-lg-3 text-center text-lg-start">
-        <h5>Contact Us</h5>
+        <h5><?= $this->len['contact_us_footer'] ?></h5>
         <div class="info">
           <?php if ($this->infopage->info_pagina_telefono) { ?>
             <span class="info-footer d-flex gap-2 align-items-center justify-content-center justify-content-lg-start">
@@ -45,7 +45,7 @@
 
       </div>
       <div class="col-12 col-lg-3 text-center text-lg-start">
-        <h5>Follow us on</h5>
+        <h5><?= $this->len['follow_us'] ?></h5>
         <div class="icons-redes d-grid gap-1 gap-lg-3">
 
           <?php if ($this->infopage->info_pagina_youtube) {
@@ -133,7 +133,7 @@
       <div class="col-12">
         <hr>
         <span class="text-center d-block">
-          &copy;All Rights Reserved Filsa <?php echo date('Y'); ?> - Designed by <a href="https://omegasolucionesweb.com" target="_blank" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-50-hover">
+          &copy;<?= $this->len['all_rights_reserved'] ?> Filsa <?php echo date('Y'); ?> - <?= $this->len['designed_by'] ?> <a href="https://omegasolucionesweb.com" target="_blank" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-50-hover">
             Omega Soluciones Web
           </a>
         </span>

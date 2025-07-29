@@ -338,3 +338,52 @@ function initGalleryMasonry() {
 }
 
 initGalleryMasonry();
+
+// Función para recargar reCAPTCHA con nuevo idioma
+function reloadRecaptcha(language) {
+  // Verificar si reCAPTCHA está disponible
+  if (typeof grecaptcha !== 'undefined') {
+    // Obtener todos los elementos de reCAPTCHA
+    const recaptchaElements = document.querySelectorAll('.g-recaptcha');
+    
+    recaptchaElements.forEach(function(element) {
+      // Reset del reCAPTCHA actual
+      try {
+        grecaptcha.reset();
+      } catch (e) {
+        console.log('Error resetting reCAPTCHA:', e);
+      }
+    });
+    
+    // Recargar el script de reCAPTCHA con el nuevo idioma
+    const existingScript = document.querySelector('script[src*="recaptcha/api.js"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+    
+    // Crear nuevo script con el idioma correcto
+    const newScript = document.createElement('script');
+    newScript.src = `https://www.google.com/recaptcha/api.js?hl=${language}`;
+    newScript.async = true;
+    newScript.defer = true;
+    document.head.appendChild(newScript);
+  }
+}
+
+// Detectar cambios de idioma y recargar reCAPTCHA si es necesario
+document.addEventListener('DOMContentLoaded', function() {
+  // Observar cambios en el atributo lang del documento
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+        const newLang = document.documentElement.getAttribute('lang');
+        reloadRecaptcha(newLang);
+      }
+    });
+  });
+  
+  observer.observe(document.documentElement, { 
+    attributes: true, 
+    attributeFilter: ['lang'] 
+  });
+});

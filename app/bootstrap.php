@@ -10,7 +10,25 @@ define('IMAGE_PATH', APP_PATH . "../public/images/");
 define('FILE_PATH', APP_PATH . "../public/files/");
 define('PUBLIC_PATH', APP_PATH . "../public/");
 
+
 date_default_timezone_set('America/Bogota');
+
+// Establecer idioma por defecto
+$selected_lang = 'es';
+
+// Verificar si se está cambiando el idioma
+if(isset($_GET['lang'])){
+  $locale = $_GET['lang'];
+  setcookie('user_lang', $locale, time() + (86400 * 30), "/");
+  $selected_lang = $locale;
+  
+  // Redireccionar para remover el parámetro lang de la URL y aplicar el cambio inmediatamente
+  $current_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+  header("Location: " . $current_path);
+  exit();
+} else if (isset($_COOKIE['user_lang'])) {
+    $selected_lang = $_COOKIE['user_lang'];
+}
 
 require_once FRAMEWORK_PATH . 'Config/Config.php';
 set_include_path(
@@ -22,6 +40,8 @@ set_include_path(
     )
   )
 );
+
+
 
 function framework_autoload($classname)
 {
@@ -57,6 +77,8 @@ if (strpos($_SERVER['HTTP_HOST'], "xovis.omegasolucionesweb.com") !== false) {
 }
 define('APPLICATION_ENV', getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : $env);
 
+
+
 error_reporting(E_STRICT);
 if ($_GET['debug'] == "1") {
   error_reporting(E_ALL);
@@ -70,6 +92,9 @@ if (!file_exists(IMAGE_PATH)) {
 if (!file_exists(FILE_PATH)) {
   mkdir(FILE_PATH, 0777, true);
 }
+
+require_once '../vendor/langs/' . $selected_lang . '.php';
+
 
 // require_once '../vendor/phpoffice/phpexcel/Classes/PHPExcel.php';
 require_once '../vendor/tcpdf/tcpdf.php';

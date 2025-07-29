@@ -9,14 +9,14 @@
 			<?php } ?>
 			<div class="row">
 				<div class="col-12 form-group d-grid">
-					<label class="control-label">activo (Si, No)</label>
+					<label class="control-label">active (Yes, No)</label>
 					<input type="checkbox" name="album_estado" value="1" class="form-control switch-form " <?php if ($this->getObjectVariable($this->content, 'album_estado') == 1) {
 																												echo "checked";
 																											} ?>></input>
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="album_nombre" class="control-label">nombre</label>
+					<label for="album_nombre" class="control-label">name</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-azul-claro "><i class="fas fa-pencil-alt"></i></span>
@@ -26,7 +26,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="album_fecha" class="control-label">fecha</label>
+					<label for="album_fecha" class="control-label">date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rojo-claro "><i class="fas fa-calendar-alt"></i></span>
@@ -40,27 +40,27 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="album_imagen">imagen</label>
+					<label for="album_imagen">image</label>
 					<input type="file" name="album_imagen" id="album_imagen" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png" >
 					<div class="help-block with-errors"></div>
 					<?php if ($this->content->album_imagen) { ?>
 						<div id="imagen_album_imagen">
 							<img src="/images/<?= $this->content->album_imagen; ?>" class="img-thumbnail thumbnail-administrator" />
-							<div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('album_imagen','<?php echo $this->route . "/deleteimage"; ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+							<div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('album_imagen','<?php echo $this->route . "/deleteimage"; ?>')"><i class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
 						</div>
 					<?php } ?>
 				</div>
 
 				<div class="col-12 form-group">
-					<label for="album_descripcion" class="form-label">descripción</label>
+					<label for="album_descripcion" class="form-label">description</label>
 					<textarea name="album_descripcion" id="album_descripcion" class="form-control tinyeditor" rows="10"><?= $this->content->album_descripcion; ?></textarea>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
 		</div>
 		<div class="botones-acciones">
-			<button class="btn btn-guardar" type="submit">Guardar</button>
-			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+			<button class="btn btn-guardar" type="submit">Save</button>
+			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
 		</div>
 	</form>
 </div>

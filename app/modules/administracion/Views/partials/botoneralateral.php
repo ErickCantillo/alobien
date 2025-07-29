@@ -4,33 +4,33 @@
     <li <?php if ($this->botonpanel == 1) { ?>class="activo" <?php } ?>>
       <a href="/administracion/panel">
         <i class="fas fa-info-circle"></i> 
-        Información Página
+        Page Information
       </a>
     </li>
   <?php } ?>
   <li <?php if ($this->botonpanel == 2) { ?>class="activo" <?php } ?>>
     <a href="/administracion/publicidad">
       <i class="far fa-images"></i> 
-      Administrar Publicidad
+      Manage Advertising
     </a>
   </li>
   <li <?php if ($this->botonpanel == 3) { ?>class="activo" <?php } ?>>
     <a href="/administracion/contenido">
       <i class="fas fa-file-invoice"></i> 
-      Administrar Contenidos
+      Manage Content
     </a>
   </li>
     <li <?php if ($this->botonpanel == 6) { ?>class="activo" <?php } ?>>
     <a href="/administracion/album">
       <i class="fas fa-file-invoice"></i> 
-      Administrar Álbumes
+      Manage Albums
     </a>
   </li>
   <?php if (Session::getInstance()->get('kt_login_level') == '1') { ?>
     <li <?php if ($this->botonpanel == 4) { ?>class="activo" <?php } ?>>
       <a href="/administracion/usuario">
         <i class="fas fa-users"></i> 
-        Administrar Usuarios
+        Manage Users
       </a>
     </li>
   <?php } ?>

@@ -5,7 +5,7 @@
         <div class="col-5 ps-0">
           <div class="div-dashboard center">
             <h2>
-              <i class="fa-solid fa-hashtag"></i> Redes Sociales <a href="/administracion/informacion/#redes"><i class="fas fa-marker"></i></a>
+              <i class="fa-solid fa-hashtag"></i> Social networks <a href="/administracion/informacion/#redes"><i class="fas fa-marker"></i></a>
             </h2>
             <div align="center">
               <div align="center" class="redes">
@@ -105,7 +105,7 @@
     <div class="col-7 pe-0" style="overflow: hidden;">
       <div class="div-dashboard">
         <h2>
-          <i class="fa-regular fa-address-book"></i> Información de Contáctenos <a href="/administracion/informacion/#contactenos"><i class="fas fa-marker"></i></a>
+          <i class="fa-regular fa-address-book"></i> Contact Information <a href="/administracion/informacion/#contactenos"><i class="fas fa-marker"></i></a>
         </h2>
         <div class="pading-dashboard">
           <div class="row">
@@ -115,7 +115,7 @@
                   <img src="/skins/administracion/images/telefono.png">
                 </div>
                 <div class="contenido">
-                  <h4>Teléfonos:</h4>
+                  <h4>phone:</h4>
                   <div><?php echo $this->info->info_pagina_telefono; ?></div>
                 </div>
               </div>
@@ -126,7 +126,7 @@
                   <img src="/skins/administracion/images/correo.png">
                 </div>
                 <div class="contenido">
-                  <h4>Correo Contacto:</h4>
+                  <h4>Email Contact:</h4>
                   <div><?php echo $this->info->info_pagina_correos_contacto; ?></div>
                 </div>
               </div>
@@ -138,7 +138,7 @@
                   <img src="/skins/administracion/images/direccion.png">
                 </div>
                 <div class="contenido">
-                  <h4>Dirección:</h4>
+                  <h4>Address:</h4>
                   <div><?php echo $this->info->info_pagina_direccion_contacto; ?></div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
     </div>
     <div class="div-dashboard h-100">
       <h2>
-        <i class="fa-regular fa-envelope"></i> Configuración Envio Correo <a href="/administracion/informacion#configcorreo"><i class="fas fa-marker"></i></a>
+        <i class="fa-regular fa-envelope"></i> Mail Sending Configuration <a href="/administracion/informacion#configcorreo"><i class="fas fa-marker"></i></a>
       </h2>
       <div class="pading-dashboard center" style=" margin-top: 2%;padding-bottom: 6px;">
         <div class="row w-100">
@@ -161,7 +161,7 @@
                   <td>
                     <span><?= $this->info->info_pagina_host; ?></span>
                   </td>
-                  <th scope="row">Correo remitente</th>
+                  <th scope="row">Sender Email</th>
                   <td>
                     <span><?= $this->info->info_pagina_correo_remitente; ?></span>
                   </td>
@@ -183,11 +183,11 @@
                   <td>
                     <span><?= $this->info->info_pagina_port; ?></span>
                   </td>
-                  <th scope="row">Nombre remitente</th>
+                  <th scope="row">Sender Name</th>
                   <td>
                     <span><?= $this->info->info_pagina_nombre_remitente; ?></span>
                   </td>
-                  <th scope="row">Correo oculto</th>
+                  <th scope="row">Hidden Email</th>
                   <td>
                     <span><?= $this->info->info_pagina_correo_oculto; ?></span>
                   </td>
@@ -201,15 +201,15 @@
 
     <div class="div-dashboard">
       <h2>
-        <i class="fa-solid fa-link"></i> Enlaces de Interés<a href="/administracion/informacion/#contactenos"><i class="fas fa-marker"></i></a>
+        <i class="fa-solid fa-link"></i> Links of Interest<a href="/administracion/informacion/#contactenos"><i class="fas fa-marker"></i></a>
       </h2>
       <div class="pading-dashboard pt-3">
         <div class="row">
           <div class="col-5">
-            <div class="titulo-registro">Se encontraron <?php echo $this->register_number; ?> Registros</div>
+            <div class="titulo-registro">Found <?php echo $this->register_number; ?> Records</div>
           </div>
           <div class="col-3 text-end">
-            <div class="texto-paginas">Registros por pagina:</div>
+            <div class="texto-paginas">Records per page:</div>
           </div>
           <div class="col-1">
             <select class="form-control form-control-sm selectpagination">
@@ -228,16 +228,16 @@
             </select>
           </div>
           <div class="col-3">
-            <div class="text-end"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?>"> <i class="fas fa-plus-square"></i> Crear Nuevo</a></div>
+            <div class="text-end"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?>"> <i class="fas fa-plus-square"></i> Create New</a></div>
           </div>
         </div>
         <div class="content-table" style="margin-left:0;margin-right:0;">
           <table class=" table table-striped  table-hover table-administrator text-left">
             <thead>
               <tr>
-                <td>Título</td>
+                <td>Title</td>
                 <td>Link</td>
-                <td width="100">Orden</td>
+                <td width="100">Order</td>
                 <td width="100"></td>
               </tr>
             </thead>
@@ -262,15 +262,15 @@
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Eliminar Registro</h4>
+                            <h4 class="modal-title" id="myModalLabel">Delete record</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                           </div>
                           <div class="modal-body">
-                            <div class="">¿Esta seguro de eliminar este registro?</div>
+                            <div class="">Are you sure you want to delete this record?</div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            <a class="btn btn-danger" href="/administracion/panel/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php echo ''; ?>">Eliminar</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-danger" href="/administracion/panel/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php echo ''; ?>">Delete</a>
                           </div>
                         </div>
                       </div>
@@ -288,12 +288,12 @@
         <div class="col-7 ps-0">
           <div class="div-dashboard">
             <h2>
-              <i class="fa-solid fa-globe"></i> Archivo SEO <a href="/administracion/informacion/#seo"><i class="fas fa-marker"></i></a>
+              <i class="fa-solid fa-globe"></i> SEO File <a href="/administracion/informacion/#seo"><i class="fas fa-marker"></i></a>
             </h2>
             <div class="pading-dashboard">
               <div class="row">
                 <div class="col-4">
-                  <h5> Descripción: </h5>
+                  <h5> Description: </h5>
                   <div class="contenedor-informacion">
                     <div class="icono-seo descripcion">
                       <img src="/skins/administracion/images/descripcion.png">
@@ -315,7 +315,7 @@
                   </div>
                 </div>
                 <div class="col-4">
-                  <h5> Archivos SEO: </h5>
+                  <h5> SEO Files: </h5>
                   <div class="contenedor-informacion">
                     <div class="icono-seo archivos">
                       <img src="/skins/administracion/images/archivos-seo.png">
@@ -334,20 +334,20 @@
         <div class="col-5 pe-0" style="overflow: hidden; margin-right: -15px;">
           <div class="div-dashboard h-100" style="">
             <h2>
-              <i class="fa-regular fa-handshake"></i> Política de Manejo de Datos <a href="/administracion/informacion/#politicadatos"><i class="fas fa-marker"></i></a>
+              <i class="fa-regular fa-handshake"></i> Data Management Policy <a href="/administracion/informacion/#politicadatos"><i class="fas fa-marker"></i></a>
             </h2>
             <div class="pading-dashboard center">
 
               <table class="table table-bordered">
                 <tbody>
                   <tr>
-                    <th>Título</th>
+                    <th>Title</th>
                   </tr>
                   <tr>
                     <td><?= $this->info->info_pagina_titulo_legal; ?></td>
                   </tr>
                   <tr>
-                    <th>Descripción</th>
+                    <th>Description</th>
                   </tr>
                   <tr>
                     <td><?= $this->info->info_pagina_descripcion_legal; ?></td>
@@ -393,13 +393,13 @@
                 <img src="/skins/administracion/images/log-de-usuario.png">
               </div>
               <div class="contenido">
-                <h4>Log de usuarios:</h4>
+                <h4>User Log:</h4>
                 <table width="100%" class="tabla_log">
                   <tr>
-                    <th>Usuario</th>
-                    <th>Fecha ingreso</th>
-                    <th>Hora ingreso</th>
-                    <th><a href="/administracion/log/"><button class="btn-xs btn-azul-claro">Detalle</button></a></th>
+                    <th>User</th>
+                    <th>Entry Date</th>
+                    <th>Entry Time</th>
+                    <th><a href="/administracion/log/"><button class="btn-xs btn-azul-claro">Detail</button></a></th>
                   <tr>
                     <?php foreach ($this->log as $log) : ?>
                       <?php $aux = explode(" ", $log->log_fecha); ?>

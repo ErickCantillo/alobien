@@ -1,3 +1,7 @@
+<?php 
+$selected_lang = isset($_COOKIE['user_lang']) ? $_COOKIE['user_lang'] : 'es';
+?>
+
 <section class="section-header">
   <div class="container">
     <nav class="navbar navbar-expand-lg">
@@ -11,28 +15,66 @@
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><?= $this->len['menu'] ?></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body gap-3">
             <ul class="navbar-nav justify-content-between flex-grow-1 pe-3">
               <li class="nav-item">
                 <a class="nav-link <?= $this->botonactivo == 1 ? 'active' : '' ?>" aria-current="page"
-                  href="/">Home</a>
+                  href="/"><?= $this->len['home'] ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  <?= $this->botonactivo == 2 ? 'active' : '' ?>" href="/page/nosotros">About Us</a>
+                <a class="nav-link  <?= $this->botonactivo == 2 ? 'active' : '' ?>" href="/page/nosotros"><?= $this->len['about_us'] ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  <?= $this->botonactivo == 3 ? 'active' : '' ?>" href="/page/servicios">Services</a>
+                <a class="nav-link  <?= $this->botonactivo == 3 ? 'active' : '' ?>" href="/page/servicios"><?= $this->len['services'] ?></a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link <?= $this->botonactivo == 4 ? 'active' : '' ?>" href="/page/galeria">Gallery</a>
+                <a class="nav-link <?= $this->botonactivo == 4 ? 'active' : '' ?>" href="/page/galeria"><?= $this->len['gallery'] ?></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link  <?= $this->botonactivo == 5 ? 'active' : '' ?>"
-                  href="/page/contacto">Contact Us</a>
+                  href="/page/contacto"><?= $this->len['contact_us'] ?></a>
               </li>
+              <li class="nav-item">
+                <?php
+                  // Obtiene la ruta actual sin parámetros de query
+                  $current_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                  // Construye la URL agregando el parámetro lang
+                  $new_lang = $selected_lang == 'es' ? 'en' : 'es';
+                  $lang_url = $current_path . '?lang=' . urlencode($new_lang);
+                  
+                  // Mostrar la bandera y texto del idioma al que va a cambiar
+                  if ($selected_lang == 'es') {
+                    // Bandera de Estados Unidos
+                    $flag_svg = '<svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="20" height="15" fill="#B22234"/>
+                      <rect y="1" width="20" height="1" fill="white"/>
+                      <rect y="3" width="20" height="1" fill="white"/>
+                      <rect y="5" width="20" height="1" fill="white"/>
+                      <rect y="7" width="20" height="1" fill="white"/>
+                      <rect y="9" width="20" height="1" fill="white"/>
+                      <rect y="11" width="20" height="1" fill="white"/>
+                      <rect y="13" width="20" height="1" fill="white"/>
+                      <rect width="8" height="8" fill="#3C3B6E"/>
+                    </svg>';
+                    $text_to_show = "English";
+                  } else {
+                    // Bandera de España
+                    $flag_svg = '<svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="20" height="15" fill="#C60B1E"/>
+                      <rect y="3.75" width="20" height="7.5" fill="#FFC400"/>
+                    </svg>';
+                    $text_to_show = "Español";
+                  }
+                ?>
+                <a class="nav-link d-flex align-items-center gap-2" href="<?= $lang_url ?>" title="<?= $text_to_show ?>">
+                  <?= $flag_svg ?>
+                  <span><?= $text_to_show ?></span>
+                </a>
+              </li>
+
             </ul>
             <div class="info-no-home" id="info-no-home">
 
@@ -69,7 +111,7 @@
                 </div>
 
                 <div class="d-flex gap-2 align-items-center ustify-content-start justify-content-lg-end">
-                  <h6 class="m-0 ">Follow us on</h6>
+                  <h6 class="m-0 "><?= $this->len['follow_us'] ?></h6>
                   <div class="icons-redes d-flex gap-1">
 
                     <?php if ($this->infopage->info_pagina_youtube) {
@@ -175,3 +217,4 @@
     </nav>
   </div>
 </section>
+

@@ -4,7 +4,7 @@
 		<div class="content-dashboard">
 			<div class="row">
 				<div class="col-3">
-					<label>nombre</label>
+					<label>name</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono fondo-cafe "><i class="fas fa-pencil-alt"></i></span>
@@ -14,7 +14,7 @@
 					</label>
 				</div>
 				<div class="col-3">
-					<label>fecha</label>
+					<label>date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-azul "><i class="fas fa-calendar-alt"></i></span>
@@ -24,7 +24,7 @@
 					</label>
 				</div>
 				<div class="col-3">
-					<label>imagen</label>
+					<label>image</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono fondo-verde "><i class="fas fa-pencil-alt"></i></span>
@@ -34,7 +34,7 @@
 					</label>
 				</div>
 				<div class="col-3">
-					<label>activo (Si, No)</label>
+					<label>active (Yes, No)</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono fondo-morado "><i class="fas fa-pencil-alt"></i></span>
@@ -45,12 +45,12 @@
 				</div>
 				<div class="col-3">
 					<label>&nbsp;</label>
-					<button type="submit" class="btn btn-block btn-azul"> <i class="fas fa-filter"></i> Filtrar</button>
+					<button type="submit" class="btn btn-block btn-azul"> <i class="fas fa-filter"></i> Filter</button>
 				</div>
 				<div class="col-3">
 					<label>&nbsp;</label>
 					<a class="btn btn-block btn-azul-claro " href="<?php echo $this->route; ?>?cleanfilter=1"> <i
-							class="fas fa-eraser"></i> Limpiar Filtro</a>
+							class="fas fa-eraser"></i> Clear Filter</a>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 			$url = $this->route;
 			if ($this->totalpages > 1) {
 				if ($this->page != 1)
-					echo '<li class="page-item" ><a class="page-link"  href="' . $url . '?page=' . ($this->page - 1) . '"> &laquo; Anterior </a></li>';
+					echo '<li class="page-item" ><a class="page-link"  href="' . $url . '?page=' . ($this->page - 1) . '"> &laquo; Previous </a></li>';
 				for ($i = 1; $i <= $this->totalpages; $i++) {
 					if ($this->page == $i)
 						echo '<li class="active page-item"><a class="page-link">' . $this->page . '</a></li>';
@@ -69,7 +69,7 @@
 						echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . $i . '">' . $i . '</a></li>  ';
 				}
 				if ($this->page != $this->totalpages)
-					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page + 1) . '">Siguiente &raquo;</a></li>';
+					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page + 1) . '">Next &raquo;</a></li>';
 			}
 			?>
 		</ul>
@@ -78,10 +78,10 @@
 		<div class="franja-paginas">
 			<div class="row">
 				<div class="col-5">
-					<div class="titulo-registro">Se encontraron <?php echo $this->register_number; ?> Registros</div>
+					<div class="titulo-registro">Found <?php echo $this->register_number; ?> Records</div>
 				</div>
 				<div class="col-3 text-right">
-					<div class="texto-paginas">Registros por pagina:</div>
+					<div class="texto-paginas">Records per page:</div>
 				</div>
 				<div class="col-1">
 					<select class="form-control form-control-sm selectpagination">
@@ -101,7 +101,7 @@
 				</div>
 				<div class="col-3">
 					<div class="text-right"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?>"> <i
-								class="fas fa-plus-square"></i> Crear Nuevo</a></div>
+								class="fas fa-plus-square"></i> Create New</a></div>
 				</div>
 			</div>
 		</div>
@@ -109,11 +109,11 @@
 			<table class=" table table-striped  table-hover table-administrator text-left">
 				<thead>
 					<tr>
-						<td>nombre</td>
-						<td>fecha</td>
-						<td>imagen</td>
-						<td>activo (Si, No)</td>
-						<td width="100">Orden</td>
+						<td>name</td>
+						<td>date</td>
+						<td>image</td>
+						<td>active (Yes, No)</td>
+						<td width="100">Order</td>
 						<td></td>
 					</tr>
 				</thead>
@@ -141,11 +141,11 @@
 										data-bs-toggle="tooltip" data-placement="top" title="Imagenes Carga Masiva"><i
 											class="fa-regular fa-images"></i></a>
 									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>"
-										data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>
+										data-bs-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-alt"></i></a>
 									<a class="btn btn-rosado btn-sm" href="/administracion/fotos/?album=<?= $id ?>" data-bs-toggle="tooltip"
-										data-placement="top" title="Imágenes"><i class="fas fa-images"></i></a>
+										data-placement="top" title="Images"><i class="fas fa-images"></i></a>
 
-									<span data-bs-toggle="tooltip" data-placement="top" title="Eliminar"><a class="btn btn-rojo btn-sm"
+									<span data-bs-toggle="tooltip" data-placement="top" title="Delete"><a class="btn btn-rojo btn-sm"
 											data-bs-toggle="modal" data-bs-target="#modal<?= $id ?>"><i class="fas fa-trash-alt"></i></a></span>
 								</div>
 								<!-- Modal -->
@@ -154,17 +154,17 @@
 									<div class="modal-dialog" role="document">
 										<div class="modal-content">
 											<div class="modal-header">
-												<h4 class="modal-title" id="myModalLabel">Eliminar Registro</h4>
+												<h4 class="modal-title" id="myModalLabel">Delete Record</h4>
 												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
 											</div>
 											<div class="modal-body">
-												<div class="">¿Esta seguro de eliminar este registro?</div>
+												<div class="">Are you sure you want to delete this record?</div>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancelar</button>
+												<button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
 												<a class="btn btn-danger"
-													href="<?php echo $this->route; ?>/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php echo ''; ?>">Eliminar</a>
+													href="<?php echo $this->route; ?>/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php echo ''; ?>">Delete</a>
 											</div>
 										</div>
 									</div>
@@ -185,7 +185,7 @@
 			$url = $this->route;
 			if ($this->totalpages > 1) {
 				if ($this->page != 1)
-					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page - 1) . '"> &laquo; Anterior </a></li>';
+					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page - 1) . '"> &laquo; Previous </a></li>';
 				for ($i = 1; $i <= $this->totalpages; $i++) {
 					if ($this->page == $i)
 						echo '<li class="active page-item"><a class="page-link">' . $this->page . '</a></li>';
@@ -193,7 +193,7 @@
 						echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . $i . '">' . $i . '</a></li>  ';
 				}
 				if ($this->page != $this->totalpages)
-					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page + 1) . '">Siguiente &raquo;</a></li>';
+					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page + 1) . '">Next &raquo;</a></li>';
 			}
 			?>
 		</ul>

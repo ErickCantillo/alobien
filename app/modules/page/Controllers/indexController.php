@@ -20,7 +20,7 @@ class Page_indexController extends Page_mainController
     // Recibir los datos enviados en formato JSON
     $input = file_get_contents('php://input');
     $data = json_decode($input, true);
-
+    
     // Verificar si la decodificación fue exitosa y si se recibieron los datos esperados
     $name = $this->sanitizarEntrada($data['name']);
     $phone = $this->sanitizarEntrada($data['phone']);

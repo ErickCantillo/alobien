@@ -9,7 +9,7 @@
     <a id="redes" name="redes"></a>
     <div class="div-dashboard">
       <h2>
-        <i class="fa-solid fa-hashtag"></i> Redes Sociales
+        <i class="fa-solid fa-hashtag"></i> Social Networks
       </h2>
       <div align="center" class="pading-dashboard">
         <br>
@@ -21,7 +21,7 @@
               </div>
               <input type="url" value="<?= $this->content->info_pagina_facebook; ?>" name="info_pagina_facebook" id="info_pagina_facebook" class="form-control" pattern="https?://.*">
               <div class="invalid-feedback">
-                Por favor ingrese una URL válida.
+                Please enter a valid URL.
               </div>
             </div>
           </div>
@@ -103,14 +103,14 @@
                   <div id="imagen_info_pagina_favicon">
                     <img src="/images/<?= $this->content->info_pagina_favicon; ?>" class="img-thumbnail thumbnail-administrator my-2" />
                     <div>
-                      <button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('info_pagina_favicon','<?php echo $this->route . "/deleteimage"; ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                      <button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('info_pagina_favicon','<?php echo $this->route . "/deleteimage"; ?>')"><i class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
                   </div>
                 <?php } ?>
               </div>
               <div class="col-12 text-center mt-2">
     
                 <div class="alert alert-info" role="alert">
-                  Tamaño de la imagen 32x32 px
+                  Image size 32x32 px
                 </div>
     
     
@@ -124,7 +124,7 @@
         <div class="div-dashboard">
           <a id="configcorreo" name="configcorreo"></a>
           <h2>
-            <img src="/skins/administracion/images/informaciondecotactenos.png"> Configuración Envio Correo
+            <img src="/skins/administracion/images/informaciondecotactenos.png"> Email Configuration
           </h2>
           <div class="pading-dashboard">
             <br>
@@ -165,7 +165,7 @@
                     </tr>
     
                     <tr>
-                      <th scope="row">Correo remitente</th>
+                      <th scope="row">Sender Email</th>
                       <td>
                         <input class="input_correo" type="text" name="info_pagina_correo_remitente" id="info_pagina_correo_remitente" value="<?= $this->content->info_pagina_correo_remitente; ?>" required>
     
@@ -173,7 +173,7 @@
     
                     </tr>
                     <tr>
-                      <th scope="row">Nombre remitente</th>
+                      <th scope="row">Sender Name</th>
                       <td>
                         <input class="input_correo" type="text" name="info_pagina_nombre_remitente" id="info_pagina_nombre_remitente" value="<?= $this->content->info_pagina_nombre_remitente; ?>" required>
     
@@ -181,7 +181,7 @@
     
                     </tr>
                     <tr>
-                      <th scope="row">Correo oculto</th>
+                      <th scope="row">Hidden Email</th>
                       <td>
                         <input class="input_correo" type="text" name="info_pagina_correo_oculto" id="info_pagina_correo_oculto" value="<?= $this->content->info_pagina_correo_oculto; ?>">
     
@@ -202,13 +202,13 @@
     <a id="contactenos" name="contactenos"></a>
     <div class="div-dashboard">
       <h2>
-      <i class="fa-regular fa-address-book"></i> Información de Contáctenos
+      <i class="fa-regular fa-address-book"></i> Contact Information
       </h2>
       <div class="pading-dashboard">
         <br>
         <div class="row">
           <div class="col-4 form-group">
-            <label for="info_pagina_telefono" class="form-label">Teléfonos:</label>
+            <label for="info_pagina_telefono" class="form-label">Phones:</label>
             <div class="input-group">
               <div class="input-group-prepend ">
                 <span class="input-group-text input-icono fondo-telefono"><i class="fas fa-phone"></i></span>
@@ -217,7 +217,7 @@
             </div>
           </div>
           <div class="col-4 form-group">
-            <label for="info_pagina_correos_contacto" class="form-label">Correo Contacto:</label>
+            <label for="info_pagina_correos_contacto" class="form-label">Contact Email:</label>
             <div class="input-group">
               <div class="input-group-prepend ">
                 <span class="input-group-text input-icono fondo-correo"><i class="fas fa-envelope"></i></span>
@@ -226,7 +226,7 @@
             </div>
           </div>
           <div class="col-4 form-group">
-            <label for="info_pagina_direccion_contacto" class="form-label">Dirección:</label>
+            <label for="info_pagina_direccion_contacto" class="form-label">Address:</label>
             <div class="input-group">
               <div class="input-group-prepend ">
                 <span class="input-group-text input-icono fondo-direccion"><i class="fas fa-map-marked-alt"></i></span>
@@ -235,11 +235,11 @@
             </div>
           </div>
           <div class="col-6 form-group mt-3">
-            <label for="info_pagina_informacion_contacto" class="form-label">Información Contacto:</label>
+            <label for="info_pagina_informacion_contacto" class="form-label">Contact Information:</label>
             <textarea name="info_pagina_informacion_contacto" id="info_pagina_informacion_contacto" class="form-control tinyeditor" rows="10"><?= $this->content->info_pagina_informacion_contacto; ?></textarea>
           </div>
           <div class="col-6 form-group mt-3">
-            <label for="info_pagina_informacion_contacto_footer" class="control-label">Información Contacto Footer:</label>
+            <label for="info_pagina_informacion_contacto_footer" class="control-label">Footer Contact Information:</label>
             <textarea name="info_pagina_informacion_contacto_footer" id="info_pagina_informacion_contacto_footer" class="form-control tinyeditor" rows="10"><?= $this->content->info_pagina_informacion_contacto_footer; ?></textarea>
           </div>
         </div>
@@ -249,12 +249,12 @@
     <a id="seo" name="seo"></a>
     <div class="div-dashboard">
       <h2>
-      <i class="fa-solid fa-globe"></i> Archivo SEO
+      <i class="fa-solid fa-globe"></i> SEO Files
       </h2>
       <div class="pading-dashboard">
         <div class="row">
           <div class="col-4 form-group">
-            <h5> Descripción: </h5>
+            <h5> Description: </h5>
             <div class="input-group">
               <div class="input-group-prepend ">
                 <span class="input-group-text input-icono-grande fondo-descripcion"><i class="fa-solid fa-quote-left"></i></span>
@@ -272,7 +272,7 @@
             </div>
           </div>
           <div class="col-4">
-            <h5> Archivos SEO: </h5>
+            <h5> SEO Files: </h5>
             <div class="contenedor-informacion">
               <div class="contenido">
                 <input type="file" name="info_pagina_robot" id="info_pagina_robot" class="form-control  file-robot" data-buttonName="btn-primary" onchange="validardocumento('info_pagina_robot');" accept="text/plain">
@@ -287,19 +287,19 @@
     <a id="politicadatos" name="politicadatos"></a>
     <div class="div-dashboard">
       <h2>
-      <i class="fa-regular fa-handshake"></i> Política de Manejo de Datos
+      <i class="fa-regular fa-handshake"></i> Data Handling Policy
       </h2>
       <div class="pading-dashboard">
         <div class="row">
           <div class="col-12">
-            <div><label>Título</label>
+            <div><label>Title</label>
 
               <div class="input-group-prepend ">
               </div>
               <input type="text" name="info_pagina_titulo_legal" id="info_pagina_titulo_legal" class="form-control" value="<?= $this->content->info_pagina_titulo_legal; ?>">
             </div>
             <div style="margin-top:2%;">
-              <label>Descripción</label>
+              <label>Description</label>
               <textarea name="info_pagina_descripcion_legal" id="info_pagina_descripcion_legal" class="form-control tinyeditor" rows="10"><?= $this->content->info_pagina_descripcion_legal; ?></textarea>
 
             </div>
@@ -331,8 +331,8 @@
     </div>
 
     <div class="botones-acciones mt-3">
-      <button class="btn btn-guardar" type="submit">Guardar</button>
-      <a href="/administracion/panel" class="btn btn-cancelar">Cancelar</a>
+      <button class="btn btn-guardar" type="submit">Save</button>
+      <a href="/administracion/panel" class="btn btn-cancelar">Cancel</a>
     </div>
   </form>
 </div>

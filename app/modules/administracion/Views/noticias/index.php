@@ -4,7 +4,7 @@
         <div class="content-dashboard">
             <div class="row">
 				<div class="col-3">
-		            <label>Fecha</label>
+		            <label>Date</label>
 		            <label class="input-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text input-icono fondo-cafe " ><i class="fas fa-pencil-alt"></i></span>
@@ -13,7 +13,7 @@
 		            </label>
 		        </div>
 				<div class="col-3">
-		            <label>Titulo</label>
+		            <label>Title</label>
 		            <label class="input-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text input-icono fondo-azul " ><i class="fas fa-pencil-alt"></i></span>

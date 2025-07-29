@@ -7,10 +7,10 @@ class Page_Model_Template_Template
 {
 
 	protected $_view;
-
 	function __construct($view)
 	{
 		$this->_view = $view;
+		$this->_view->selected_lang = isset($_COOKIE['user_lang']) ? $_COOKIE['user_lang'] : 'es';
 	}
 
 	public function getContentseccion($seccion)
