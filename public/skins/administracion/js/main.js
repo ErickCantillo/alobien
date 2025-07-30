@@ -49,6 +49,7 @@ $(document).ready(function () {
       "template",
     ],
     contextmenu: false,
+    // language: "es",
 
     templates: [
       {
@@ -171,7 +172,6 @@ $(document).ready(function () {
     },
     image_advtab: true,
     a_plugin_option: true,
-    language: "es",
     a_configuration_option: 400,
     browser_spellcheck: true,
 

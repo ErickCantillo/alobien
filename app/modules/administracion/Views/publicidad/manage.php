@@ -25,7 +25,7 @@
       <div class="row">
         <?php if (!$padre && $padre == 0) { ?>
           <div class="col-2 form-group">
-            <label class="control-label">Sección</label>
+            <label class="control-label">Section</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-cafe "><i class="far fa-list-alt"></i></span>
@@ -43,7 +43,7 @@
 
               <select class="form-control" name="publicidad_seccion" id="publicidad_seccion" required
                 onchange="cambiar_contenido();">
-                <option value="">Seleccione...</option>
+                <option value="">Select...</option>
                 <?php foreach ($this->list_publicidad_seccion as $key => $value) { ?>
                   <option <?php if ($this->getObjectVariable($this->content, "publicidad_seccion") == $key) {
                     echo "selected";
@@ -62,7 +62,7 @@
         <?php } ?>
 
         <div class="col-2 form-group">
-          <label for="publicidad_nombre" class="control-label">Nombre</label>
+          <label for="publicidad_nombre" class="control-label">Name</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-verde-claro "><i class="fas fa-pencil-alt"></i></span>
@@ -73,7 +73,7 @@
           <div class="help-block with-errors"></div>
         </div>
         <div class="col-2 form-group">
-          <label for="publicidad_fecha" class="control-label">Fecha</label>
+          <label for="publicidad_fecha" class="control-label">Date</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-rosado "><i class="fas fa-calendar-alt"></i></span>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="col-3 form-group">
-          <label class="control-label" id="label-mostrar">Mostrar info</label>
+          <label class="control-label" id="label-mostrar">Show info</label>
           <br>
           <input type="checkbox" name="mostrarinfo" value="1" class="form-control switch-form" <?php if ($this->getObjectVariable($this->content, 'mostrarinfo') == 1) {
             echo "checked";
@@ -98,7 +98,7 @@
         </div>
         <?php if (($this->content->publicidad_seccion != 3) && ($this->content->publicidad_seccion != 2)) { ?>
           <div class="col-3 form-group">
-            <label for="publicidad_imagen">Imagen</label>
+            <label for="publicidad_imagen">Image</label>
             <input type="file" name="publicidad_imagen" id="publicidad_imagen" class="form-control  file-image"
               data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
             <div class="help-block with-errors"></div>
@@ -107,12 +107,12 @@
                 <img src="/images/<?= $this->content->publicidad_imagen; ?>"
                   class="img-thumbnail thumbnail-administrator" />
                 <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagen','<?php echo $this->route . "/deleteimage";
-                ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                ?>')"><i class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
               </div>
             <?php } ?>
           </div>
           <div class="col-3 form-group">
-            <label for="publicidad_imagenresponsive	">Imagen Responsive</label>
+            <label for="publicidad_imagenresponsive	">Responsive Image</label>
             <input type="file" name="publicidad_imagenresponsive" id="publicidad_imagenresponsive"
               class="form-control  file-image" data-buttonName="btn-primary"
               accept="image/gif, image/jpg, image/jpeg, image/png">
@@ -122,7 +122,7 @@
                 <img src="/images/<?= $this->content->publicidad_imagenresponsive; ?>"
                   class="img-thumbnail thumbnail-administrator" />
                 <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagenresponsive','<?php echo $this->route . "/deleteimage";
-                ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                ?>')"><i class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
               </div>
             <?php } ?>
           </div>
@@ -141,7 +141,7 @@
             </div>
           <?php } ?>
           <div class="col-2 form-group">
-            <label for="publicidad_color_fondo" class="control-label">Color Fondo</label>
+            <label for="publicidad_color_fondo" class="control-label">Background Color</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-morado "><i class="fas fa-pencil-alt"></i></span>
@@ -152,7 +152,7 @@
             <div class="help-block with-errors"></div>
           </div>
           <div class="col-2 form-group">
-            <label class="control-label">Estado</label>
+            <label class="control-label">Status</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-azul-claro "><i class="far fa-list-alt"></i></span>
@@ -172,7 +172,7 @@
           </div>
         <?php } else { ?>
           <div class="col-3 form-group">
-            <label for="publicidad_imagen">Imagen</label>
+            <label for="publicidad_imagen">Image</label>
             <input type="file" name="publicidad_imagen" id="publicidad_imagen" class="form-control  file-image"
               data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
             <div class="help-block with-errors"></div>
@@ -181,12 +181,12 @@
                 <img src="/images/<?= $this->content->publicidad_imagen; ?>"
                   class="img-thumbnail thumbnail-administrator" />
                 <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagen','<?php echo $this->route . "/deleteimage";
-                ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                ?>')"><i class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
               </div>
             <?php } ?>
           </div>
           <div class="col-3 form-group">
-            <label for="publicidad_imagenresponsive	">Imagen Responsive</label>
+            <label for="publicidad_imagenresponsive	">Responsive Image</label>
             <input type="file" name="publicidad_imagenresponsive" id="publicidad_imagenresponsive"
               class="form-control  file-image" data-buttonName="btn-primary"
               accept="image/gif, image/jpg, image/jpeg, image/png">
@@ -196,13 +196,13 @@
                 <img src="/images/<?= $this->content->publicidad_imagenresponsive; ?>"
                   class="img-thumbnail thumbnail-administrator" />
                 <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagenresponsive','<?php echo $this->route . "/deleteimage";
-                ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                ?>')"><i class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
               </div>
             <?php } ?>
           </div>
 
           <div class="col-3 form-group">
-            <label for="publicidad_color_fondo" class="control-label">Color Fondo</label>
+            <label for="publicidad_color_fondo" class="control-label">Background Color</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-morado "><i class="fas fa-pencil-alt"></i></span>
@@ -213,7 +213,7 @@
             <div class="help-block with-errors"></div>
           </div>
           <div class="col-3 form-group">
-            <label class="control-label">Estado</label>
+            <label class="control-label">Status</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-azul-claro "><i class="far fa-list-alt"></i></span>
@@ -233,7 +233,7 @@
           </div>
         <?php } ?>
         <div class="col-2 form-group">
-          <label for="publicidad_enlace" class="control-label">Enlace</label>
+          <label for="publicidad_enlace" class="control-label">Link</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-azul "><i class="fas fa-pencil-alt"></i></span>
@@ -244,13 +244,13 @@
           <div class="help-block with-errors"></div>
         </div>
         <div class="col-2 form-group">
-          <label class="control-label">Tipo Enlace</label>
+          <label class="control-label">Link Type</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-rojo-claro "><i class="far fa-list-alt"></i></span>
             </div>
             <select class="form-control" name="publicidad_tipo_enlace">
-              <option value="">Seleccione...</option>
+              <option value="">Select...</option>
               <?php foreach ($this->list_publicidad_tipo_enlace as $key => $value) { ?>
                 <option <?php if ($this->getObjectVariable($this->content, "publicidad_tipo_enlace") == $key) {
                   echo "selected";
@@ -263,7 +263,7 @@
           <div class="help-block with-errors"></div>
         </div>
         <div class="col-2 form-group">
-          <label for="publicidad_texto_enlace" class="control-label">Texto Enlace</label>
+          <label for="publicidad_texto_enlace" class="control-label">Link Text</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-rosado "><i class="fas fa-pencil-alt"></i></span>
@@ -274,7 +274,7 @@
           <div class="help-block with-errors"></div>
         </div>
         <div class="col-12 form-group">
-          <label for="publicidad_descripcion" class="form-label">Descripción</label>
+          <label for="publicidad_descripcion" class="form-label">Description</label>
           <textarea name="publicidad_descripcion" id="publicidad_descripcion" class="form-control tinyeditor"
             rows="10"><?= $this->content->publicidad_descripcion; ?></textarea>
           <div class="help-block with-errors"></div>
@@ -282,8 +282,8 @@
       </div>
     </div>
     <div class="botones-acciones">
-      <button class="btn btn-guardar" type="submit">Guardar</button>
-      <a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+      <button class="btn btn-guardar" type="submit">Save</button>
+      <a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
     </div>
   </form>
 </div>
