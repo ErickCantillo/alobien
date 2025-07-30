@@ -8,7 +8,7 @@
             <div class="col-3">
                 <a href="/administracion/album"
                     class="btn btn-outline-success d-flex justify-content-center align-items-center gap-2"><i
-                        class="fa-solid fa-circle-arrow-left"></i> Volver</a>
+                        class="fa-solid fa-circle-arrow-left"></i> Back</a>
             </div>
         </div>
     <?php } ?>
@@ -22,10 +22,10 @@
     var myDropzone = new Dropzone("#cargarFotos", {
         paramName: "fotos-file", // The name that will be used to transfer the file
         maxFilesize: 8, // MB,
-        dictDefaultMessage: '<i class="fas fa-folder-plus"></i><h3>Seleccione o arrastre las imágenes a subir',
-        dictInvalidFileType: 'Formato no compatible',
+        dictDefaultMessage: '<i class="fas fa-folder-plus"></i><h3>Select or drag the images to upload',
+        dictInvalidFileType: 'Unsupported format',
         acceptedFiles: '.png, .jpg, .jpeg, gif, webp',
-        dictMaxFilesExceeded: 'Solo puede ser cargado un archivo',
+        dictMaxFilesExceeded: 'Only one file can be uploaded',
         autoProcessQueue: false,
         url: "/administracion/fotos/uploadfotos",
         autoProcessQueue: true,

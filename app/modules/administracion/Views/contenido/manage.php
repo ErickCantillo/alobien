@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-12">
           <h2 class="content-title">
-            Tipo de Contenido
+            Content Type
           </h2>
         </div>
         <input type="hidden" name="contenido_padre"
@@ -38,7 +38,7 @@
                     echo $this->padre;
                   }  ?>">
         <div class="col-2 form-group">
-          <label class="control-label">Activar Contenido</label>
+          <label class="control-label">Activate Content</label>
           <br>
           <input type="checkbox" name="contenido_estado" value="1" class="form-control switch-form"
             <?php if ($this->getObjectVariable($this->content, 'contenido_estado') == 1) {
@@ -48,13 +48,13 @@
         </div>
         <?php if ($padre == 0 || $padre == '') { ?>
           <div class="col-3 form-group">
-            <label class="control-label">Sección</label>
+            <label class="control-label">Section</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-cafe "><i class="far fa-list-alt"></i></span>
               </div>
               <select class="form-control" name="contenido_seccion" id="contenido_seccion" required>
-                <option value="">Seleccione...</option>
+                <option value="">Select...</option>
                 <?php foreach ($this->list_contenido_seccion as $key => $value) { ?>
                   <option
                     <?php if ($this->getObjectVariable($this->content, "contenido_seccion") == $key) {
@@ -71,7 +71,7 @@
         <?php } ?>
         <?php if ($this->mostrartipos == 1 || $padre == 0 || $padre == '') { ?>
           <div class="col-3 form-group">
-            <label class="control-label">Tipo</label>
+            <label class="control-label">Type</label>
             <label class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text input-icono  fondo-verde "><i class="far fa-list-alt"></i></span>
@@ -80,7 +80,7 @@
 
               <select class="form-control" name="contenido_tipo" id="contenido_tipo" required
                 onchange="aparecercolumna();">
-                <option value="">Seleccione...</option>
+                <option value="">Select...</option>
                 <?php foreach ($this->list_contenido_tipo as $key => $value) { ?>
                   <option <?php if ($this->getObjectVariable($this->content, "contenido_tipo") == $key) {
                             echo "selected";
@@ -95,7 +95,7 @@
           <input type="hidden" name="contenido_tipo" id="contenido_tipo" value="<?php echo $tipo; ?>">
         <?php } ?>
         <div class="col-3 form-group">
-          <label for="contenido_fecha" class="control-label">Fecha</label>
+          <label for="contenido_fecha" class="control-label">Date</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-morado "><i class="fas fa-calendar-alt"></i></span>
@@ -114,13 +114,13 @@
         <div
           class="col-3 <?php if ($this->content->contenido_padre == 0) { ?>d-none <?php } ?> form-group si-banner si-seccion no-contenido  si-carrousel no-acordion no-contenido2"
           <?php if ($tipo != 1 && $tipo != 2  && $tipo != 6) { ?> style="display: none;" <?php } ?>>
-          <label class="control-label">Diseño Columnas</label>
+          <label class="control-label">Column Layout</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-verde "><i class="fas fa-arrows-alt-h"></i></span>
             </div>
             <select class="form-control" name="contenido_columna_espacios">
-              <option value="">Seleccione...</option>
+              <option value="">Select...</option>
               <?php foreach ($this->list_contenido_columna_espacios as $key => $value) { ?>
                 <option
                   <?php if ($this->getObjectVariable($this->content, "contenido_columna_espacios") == $key) {
@@ -135,13 +135,13 @@
         <div
           class="col-3  form-group no-banner no-carrousel no-acordion si-seccion ">
 
-          <label class="control-label ">Alineación</label>
+          <label class="control-label ">Alignment</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-verde "><i class="fas fa-align-center"></i></span>
             </div>
             <select class="form-control" name="contenido_columna_alineacion">
-              <option value="">Seleccione...</option>
+              <option value="">Select...</option>
               <?php foreach ($this->list_contenido_columna_alineacion as $key => $value) { ?>
                 <option
                   <?php if ($this->getObjectVariable($this->content, "contenido_columna_alineacion") == $key) {
@@ -155,12 +155,12 @@
         </div>
         <div class="col-12 mt-4 no-start <?php if ($this->content->contenido_padre == 0) { ?>d-none <?php } ?> no-colum">
           <h2 class="content-title">
-            Diseño
+            Layout
           </h2>
         </div>
         <?php if (($tipo != 4) || $this->contentpadre->contenido_tipo == 2) { ?>
           <div class="col-12 <?php if ($this->content->contenido_padre == 0) { ?>d-none <?php } ?> form-group no-colum">
-            <label for="contenido_columna" class="control-label">Columna</label>
+            <label for="contenido_columna" class="control-label">Column</label>
             <div class="row">
 
               <div class="col-2">
@@ -236,7 +236,7 @@
           <div class="col-10 form-group no-banner no-seccion si-carrousel no-acordion si-contenido2 "
             <?php if (($tipo != 2 && $tipo != 4 && $tipo != 5 && $tipo != 6) || $tipo == 0) { ?> style="display: none;"
             <?php } ?>>
-            <label for="contenido_disenio" class="control-label">Diseño del Contenido</label>
+            <label for="contenido_disenio" class="control-label">Content Layout</label>
             <div class="row">
               <div class="col-3">
                 <label class="radio-disenio">
@@ -259,7 +259,7 @@
               <div class="col-3">
                 <label class="radio-disenio">
                   <input type="radio" value="3" <?php if ($this->content->contenido_disenio == '3') { ?> checked <?php } ?>
-                    name="contenido_disenio" id="contenido_disenio" class="form-control">
+                    name="contenido_disenio" id="contenido_disenio" class="control-label">
                   <span>
                     <img src="/skins/administracion/images/forma3.png">
                   </span>
@@ -289,7 +289,7 @@
           <div class="col-2 form-group no-banner si-carrousel no-acordion si-contenido2"
             <?php if (isset($tipo) == false || ($tipo != 2 && $tipo != 4  && $tipo != 6)) { ?> style="display: none;"
             <?php } ?>>
-            <label class="control-label">Diseño con Borde</label><br>
+            <label class="control-label">Border Layout</label><br>
             <input type="checkbox" class="switch-form" name="contenido_borde" value="1"
               <?php if ($this->getObjectVariable($this->content, 'contenido_borde') == 1) {
                 echo "checked";
@@ -299,11 +299,11 @@
         <?php } ?>
         <div class="col-12 mt-4 no-start">
           <h2 class="content-title">
-            Información del contenido
+            Content Information
           </h2>
         </div>
         <div class="col-10 form-group no-start">
-          <label for="contenido_titulo" class="control-label">Título</label>
+          <label for="contenido_titulo" class="control-label">Title</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-rojo-claro "><i class="fas fa-pencil-alt"></i></span>
@@ -315,7 +315,7 @@
         </div>
         <div class="col-2 form-group no-banner  si-seccion no-carrousel no-acordion si-contenido2"
           <?php if ($tipo == 1 || $tipo == 6 || $tipo == 7  || $tipo == 0) { ?> style="display: none;" <?php } ?>>
-          <label class="control-label">Mostrar Título</label><br>
+          <label class="control-label">Show Title</label><br>
           <input type="checkbox" name="contenido_titulo_ver" value="1" class="form-control switch-form "
             <?php if ($this->getObjectVariable($this->content, 'contenido_titulo_ver') == 1) {
               echo "checked";
@@ -325,7 +325,7 @@
         <div class="col-12 form-group no-banner si-seccion si-contenido no-carrousel  no-acordion  si-contenido2"
           <?php if ($tipo == 1 || $tipo == 4 || $tipo == 6 || $tipo == 7  || $tipo == 0) { ?> style="display: none;"
           <?php } ?>>
-          <label for="contenido_imagen">Imagen</label>
+          <label for="contenido_imagen">Image</label>
           <input type="file" name="contenido_imagen" id="contenido_imagen" class="form-control  file-image"
             data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
           <div class="help-block with-errors"></div>
@@ -334,13 +334,13 @@
               <img src="/images/<?= $this->content->contenido_imagen; ?>" class="img-thumbnail thumbnail-administrator" />
               <div><button class="btn btn-danger btn-sm" type="button"
                   onclick="eliminarImagen('contenido_imagen','<?php echo $this->route . "/deleteimage"; ?>')"><i
-                    class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                    class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
             </div>
           <?php } ?>
         </div>
         <div class="col-4 form-group no-banner no-acordion no-carrousel si-seccion"
           <?php if ($tipo != 2 && $tipo != 4) { ?> style="display: none;" <?php } ?>>
-          <label for="contenido_fondo_imagen"><?php if ($tipo == 4) { ?>Imagen Banner <?php } else { ?> Imagen Fondo
+          <label for="contenido_fondo_imagen"><?php if ($tipo == 4) { ?>Banner Image <?php } else { ?> Background Image
           <?php } ?></label>
           <input type="file" name="contenido_fondo_imagen" id="contenido_fondo_imagen" class="form-control  file-image"
             data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
@@ -351,19 +351,19 @@
                 class="img-thumbnail thumbnail-administrator" />
               <div><button class="btn btn-danger btn-sm" type="button"
                   onclick="eliminarImagen('contenido_fondo_imagen','<?php echo $this->route . "/deleteimage"; ?>')"><i
-                    class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                    class="glyphicon glyphicon-remove"></i> Delete Image</button></div>
             </div>
           <?php } ?>
         </div>
         <div class="col-4 form-group no-carrousel no-acordion no-carrousel si-seccion" <?php if ($tipo != 2) { ?>
           style="display: none;" <?php } ?>>
-          <label class="control-label">Tipo Fondo</label>
+          <label class="control-label">Background Type</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-rosado "><i class="far fa-list-alt"></i></span>
             </div>
             <select class="form-control" name="contenido_fondo_imagen_tipo">
-              <option value="">Seleccione...</option>
+              <option value="">Select...</option>
               <?php foreach ($this->list_contenido_fondo_imagen_tipo as $key => $value) { ?>
                 <option
                   <?php if ($this->getObjectVariable($this->content, "contenido_fondo_imagen_tipo") == $key) {
@@ -377,8 +377,8 @@
         </div>
         <div class="col-4 form-group no-contenido no-banner si-seccion no-acordion si-carrousel si-contenido2"
           <?php if ($tipo != 2 && $tipo != 4 && $tipo != 5  && $tipo != 6) { ?> style="display: none;" <?php } ?>>
-          <label for="contenido_fondo_color" class="control-label"><?php if ($tipo == 4) { ?> Color Caption
-            <?php } else { ?> Color Fondo <?php } ?></label>
+          <label for="contenido_fondo_color" class="control-label"><?php if ($tipo == 4) { ?> Caption Color
+            <?php } else { ?> Background Color <?php } ?></label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-azul-claro "><i class="fas fa-pencil-alt"></i></span>
@@ -390,7 +390,7 @@
         </div>
         <div class="col-12 form-group no-banner no-carrousel no-seccion no-acordion si-contenido"
           <?php if ($tipo != 3) { ?> style="display: none;" <?php } ?>>
-          <label for="contenido_introduccion" class="form-label">Introducci&oacute;n</label>
+          <label for="contenido_introduccion" class="form-label">Introduction</label>
           <textarea name="contenido_introduccion" id="contenido_introduccion" class="form-control tinyeditor"
             rows="10"><?= $this->content->contenido_introduccion; ?></textarea>
           <div class="help-block with-errors"></div>
@@ -398,7 +398,7 @@
         <div class="col-12 form-group no-banner si-seccion si-contenido si-carrousel si-acordion si-contenido2 no-start"
           <?php if (($tipo == 1 || $tipo == 0) && $this->contentpadre->contenido_tipo != 2) { ?> style="display: none;"
           <?php } ?>>
-          <label for="contenido_descripcion" class="form-label">Descripción</label>
+          <label for="contenido_descripcion" class="form-label">Description</label>
           <textarea name="contenido_descripcion" id="contenido_descripcion" class="form-control tinyeditor"
             rows="10"><?= $this->content->contenido_descripcion; ?></textarea>
           <div class="help-block with-errors"></div>
@@ -408,7 +408,7 @@
         <?php if ($tipo == 1 || $tipo == 6 || $tipo == 7 || ($tipo == 0 && $this->contentpadre->contenido_tipo == 2)) { ?>
         style="display: none;" <?php } ?>>
         <div class="col-6 form-group no-start">
-          <label for="contenido_enlace" class="control-label">Enlace</label>
+          <label for="contenido_enlace" class="control-label">Link</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-verde-claro "><i class="fas fa-pencil-alt"></i></span>
@@ -416,7 +416,7 @@
             <input type="text" value="<?= $this->content->contenido_enlace; ?>" name="contenido_enlace"
               id="contenido_enlace" class="form-control">
             <div class="input-group-prepend">
-              <span class="input-group-text">Abrir en </span>
+              <span class="input-group-text">Open in </span>
               <select class="form-control" name="contenido_enlace_abrir">
                 <?php foreach ($this->list_contenido_enlace_abrir as $key => $value) { ?>
                   <option
@@ -431,7 +431,7 @@
           <div class="help-block with-errors"></div>
         </div>
         <div class="col-6 form-group no-start">
-          <label for="contenido_vermas" class="control-label">Texto Ver m&aacute;s</label>
+          <label for="contenido_vermas" class="control-label">Read more text</label>
           <label class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text input-icono  fondo-rosado "><i class="fas fa-pencil-alt"></i></span>
@@ -444,11 +444,11 @@
       </div>
     </div>
     <div class="botones-acciones">
-      <button class="btn btn-guardar" type="submit">Guardar</button>
+      <button class="btn btn-guardar" type="submit">Save</button>
       <a href="<?php echo $this->route; ?><?php if ($padre) {
                                             echo "?padre=" . $padre;
                                           } ?>"
-        class="btn btn-cancelar">Cancelar</a>
+        class="btn btn-cancelar">Cancel</a>
     </div>
   </form>
 </div>

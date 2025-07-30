@@ -9,13 +9,13 @@
 			<?php }?>
 			<div class="row">
 				<div class="col-2 form-group">
-					<label class="control-label">Estado</label>
+					<label class="control-label">State</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-azul-claro " ><i class="fas fa-clipboard-check"></i></span>
 						</div>
 						<select class="form-control" name="user_state"   >
-							<option value="">Seleccione...</option>
+							<option value="">Select...</option>
 							<?php foreach ($this->list_user_state AS $key => $value ){?>
 								<option <?php if($this->getObjectVariable($this->content,"user_state") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
 							<?php } ?>
@@ -25,7 +25,7 @@
 				</div>
 				<input type="hidden" name="user_date"  value="<?php echo $this->content->user_date ?>">
 				<div class="col-3 form-group">
-					<label for="user_names"  class="control-label">Nombres</label>
+					<label for="user_names"  class="control-label">Names</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-morado " ><i class="fas fa-pencil-alt"></i></span>
@@ -35,7 +35,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-2 form-group">
-					<label for="user_cedula"  class="control-label">Cédula</label>
+					<label for="user_cedula"  class="control-label">ID</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-morado " ><i class="fas fa-pencil-alt"></i></span>
@@ -45,7 +45,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-3 form-group">
-					<label for="user_email"  class="control-label">correo</label>
+					<label for="user_email"  class="control-label">Email</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-verde-claro " ><i class="fas fa-envelope"></i></span>
@@ -55,7 +55,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
         <div class="col-2 form-group">
-					<label for="user_user"  class="control-label">Usuario</label>
+					<label for="user_user"  class="control-label">User</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rosado " ><i class="fas fa-user-tie"></i></span>
@@ -65,7 +65,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-3 form-group">
-					<label for="user_telefono"  class="control-label">Teléfono</label>
+					<label for="user_telefono"  class="control-label">Phone</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-morado " ><i class="fas fa-pencil-alt"></i></span>
@@ -75,13 +75,13 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-3 form-group">
-					<label class="control-label">Nivel</label>
+					<label class="control-label">Level</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rojo-claro " ><i class="far fa-list-alt"></i></span>
 						</div>
 						<select class="form-control" name="user_level"  required >
-							<option value="">Seleccione...</option>
+							<option value="">Select...</option>
 							<?php foreach ($this->list_user_level AS $key => $value ){?>
 								<option <?php if($this->getObjectVariable($this->content,"user_level") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
 							<?php } ?>
@@ -91,7 +91,7 @@
 				</div>
 				
 				<div class="col-3 form-group">
-					<label for="user_password"  class="control-label">Contrase&ntilde;a</label>
+					<label for="user_password"  class="control-label">Password</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-cafe " ><i class="fas fa-key"></i></span>
@@ -101,12 +101,12 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-3 form-group">
-					<label for="user_password"  class="control-label">Repita Contrase&ntilde;a</label>
+					<label for="user_password"  class="control-label">Repeat Password</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-cafe " ><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" value="" name="user_passwordr" id="user_passwordr" data-match="#user_password" min="8" data-match-error="Las dos contraseñas no son iguales" class="form-control" <?php if (!$this->content->user_id) { ?>required <?php } ?>   >
+						<input type="password" value="" name="user_passwordr" id="user_passwordr" data-match="#user_password" min="8" data-match-error="Both passwords do not match" class="form-control" <?php if (!$this->content->user_id) { ?>required <?php } ?>   >
 					</label>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -116,8 +116,8 @@
 			</div>
 		</div>
 		<div class="botones-acciones">
-			<button class="btn btn-guardar" type="submit">Guardar</button>
-			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+			<button class="btn btn-guardar" type="submit">Save</button>
+			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
 		</div>
 	</form>
 </div>

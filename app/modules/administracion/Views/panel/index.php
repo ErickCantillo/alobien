@@ -115,7 +115,7 @@
                   <img src="/skins/administracion/images/telefono.png">
                 </div>
                 <div class="contenido">
-                  <h4>phone:</h4>
+                  <h4>Phone:</h4>
                   <div><?php echo $this->info->info_pagina_telefono; ?></div>
                 </div>
               </div>
@@ -126,7 +126,7 @@
                   <img src="/skins/administracion/images/correo.png">
                 </div>
                 <div class="contenido">
-                  <h4>Email Contact:</h4>
+                  <h4>Contact Email:</h4>
                   <div><?php echo $this->info->info_pagina_correos_contacto; ?></div>
                 </div>
               </div>
@@ -206,7 +206,7 @@
       <div class="pading-dashboard pt-3">
         <div class="row">
           <div class="col-5">
-            <div class="titulo-registro">Found <?php echo $this->register_number; ?> Records</div>
+            <div class="titulo-registro">Found <?php echo $this->register_number; ?> records</div>
           </div>
           <div class="col-3 text-end">
             <div class="texto-paginas">Records per page:</div>
@@ -228,7 +228,7 @@
             </select>
           </div>
           <div class="col-3">
-            <div class="text-end"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?>"> <i class="fas fa-plus-square"></i> Create New</a></div>
+            <div class="text-end"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?>"> <i class="fas fa-plus-square"></i> Create new</a></div>
           </div>
         </div>
         <div class="content-table" style="margin-left:0;margin-right:0;">
@@ -254,8 +254,8 @@
                   </td>
                   <td class="text-end">
                     <div>
-                      <a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>
-                      <?php if ($_SESSION['kt_login_level'] == 1) { ?><span data-bs-toggle="tooltip" data-placement="top" title="Eliminar"><a class="btn btn-rojo btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $id ?>"><i class="fas fa-trash-alt"></i></a></span><?php } ?>
+                      <a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-alt"></i></a>
+                      <?php if ($_SESSION['kt_login_level'] == 1) { ?><span data-bs-toggle="tooltip" data-placement="top" title="Delete"><a class="btn btn-rojo btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $id ?>"><i class="fas fa-trash-alt"></i></a></span><?php } ?>
                     </div>
                     <!-- Modal -->
                     <div class="modal fade text-left" id="modal<?= $id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -407,7 +407,7 @@
                     <td><?php echo $log->log_usuario; ?></td>
                     <td><?php echo $aux[0]; ?></td>
                     <td><?php echo $aux[1]; ?></td>
-                    <td><a href="/administracion/log/?log_usuario=<?php echo $log->log_usuario; ?>"><button class="btn-xs btn-verde-claro">Detalle</button></a></td>
+                    <td><a href="/administracion/log/?log_usuario=<?php echo $log->log_usuario; ?>"><button class="btn-xs btn-verde-claro">Detail</button></a></td>
                   </tr>
                 <?php endforeach ?>
                 </table>

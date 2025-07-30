@@ -10,7 +10,7 @@
 			<?php }?>
 			<div class="row">
 				<div class="col-4 form-group">
-					<label for="subscripcion_name"  class="control-label">Nombre</label>
+					<label for="subscripcion_name"  class="control-label">Name</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono " ><i class="fas fa-pencil-alt"></i></span>
@@ -20,7 +20,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-4 form-group">
-					<label for="subscripcion_phone"  class="control-label">Teléfono</label>
+					<label for="subscripcion_phone"  class="control-label">Phone</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono " ><i class="fas fa-pencil-alt"></i></span>
@@ -30,7 +30,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-4 form-group">
-					<label for="subscripcion_email"  class="control-label">Correo</label>
+					<label for="subscripcion_email"  class="control-label">Email</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono " ><i class="fas fa-pencil-alt"></i></span>
@@ -40,7 +40,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-4 form-group">
-					<label for="subscripcion_date"  class="control-label">Fecha</label>
+					<label for="subscripcion_date"  class="control-label">Date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono " ><i class="fas fa-pencil-alt"></i></span>
@@ -50,15 +50,15 @@
 					<div class="help-block with-errors"></div>
 				</div>
 		<div class="col-4 form-group">
-			<label   class="control-label">Estado</label>
+			<label   class="control-label">State</label>
 				<input type="checkbox" name="subscripcion_state" value="1" class="form-control switch-form " <?php if ($this->getObjectVariable($this->content, 'subscripcion_state') == 1) { echo "checked";} ?>   ></input>
 				<div class="help-block with-errors"></div>
 		</div>
 			</div>
 		</div>
 		<div class="botones-acciones">
-			<button class="btn btn-guardar" type="submit">Guardar</button>
-			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+			<button class="btn btn-guardar" type="submit">Save</button>
+			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
 		</div>
 	</form>
 </div>

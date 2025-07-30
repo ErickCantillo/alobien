@@ -9,7 +9,7 @@
 			<?php }?>
 			<div class="row">
 				<div class="col-9 form-group">
-					<label for="publicidad_nombre"  class="control-label">Nombre</label>
+					<label for="publicidad_nombre"  class="control-label">Name</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rosado " ><i class="fas fa-pencil-alt"></i></span>
@@ -19,7 +19,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-3 form-group">
-					<label for="publicidad_fecha"  class="control-label">Fecha</label>
+					<label for="publicidad_fecha"  class="control-label">Date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-cafe " ><i class="fas fa-calendar-alt"></i></span>
@@ -29,13 +29,13 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="publicidad_imagen" >Imagen</label>
+					<label for="publicidad_imagen" >Image</label>
 					<input type="file" name="publicidad_imagen" id="publicidad_imagen" class="form-control  file-image" data-buttonName="btn-primary" onchange="validarimagen('publicidad_imagen');" accept="image/gif, image/jpg, image/jpeg, image/png" >
 					<div class="help-block with-errors"></div>
 					<?php if($this->content->publicidad_imagen) { ?>
 						<div id="imagen_publicidad_imagen">
 							<img src="/images/<?= $this->content->publicidad_imagen; ?>"  class="img-thumbnail thumbnail-administrator" />
-							<div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagen','<?php echo $this->route."/deleteimage"; ?>')"><i class="glyphicon glyphicon-remove" ></i> Eliminar Imagen</button></div>
+							<div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagen','<?php echo $this->route."/deleteimage"; ?>')"><i class="glyphicon glyphicon-remove" ></i> Delete Image</button></div>
 						</div>
 					<?php } ?>
 				</div>
@@ -51,13 +51,13 @@
 				</div>
 				<div class="col-12 form-group">
 					<label for="publicidad_descripcion" class="form-label" >
-						Descripcion
+						Description
 					</label>
 					<textarea name="publicidad_descripcion" id="publicidad_descripcion"   class="form-control tinyeditor" rows="10"   ><?= $this->content->publicidad_descripcion; ?></textarea>
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-4 form-group">
-					<label class="control-label">Estado</label>
+					<label class="control-label">Status</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-azul-claro " ><i class="far fa-check-circle"></i></span>
@@ -71,7 +71,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-2 form-group">
-					<label for="publicidad_click"  class="control-label">clicks</label>
+					<label for="publicidad_click"  class="control-label">Clicks</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-azul " ><i class="far fa-hand-point-up"></i></span>
@@ -81,7 +81,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="publicidad_enlace"  class="control-label">Enlace</label>
+					<label for="publicidad_enlace"  class="control-label">Link</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rojo-claro " ><i class="fas fa-link"></i></span>
@@ -93,8 +93,8 @@
 			</div>
 		</div>
 		<div class="botones-acciones">
-			<button class="btn btn-guardar" type="submit">Guardar</button>
-			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+			<button class="btn btn-guardar" type="submit">Save</button>
+			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
 		</div>
 	</form>
 </div>

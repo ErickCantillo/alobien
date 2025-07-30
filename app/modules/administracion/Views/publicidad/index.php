@@ -126,7 +126,7 @@
 		<div class="franja-paginas">
 			<div class="row">
 				<div class="col-5">
-					<div class="titulo-registro">Found <?php echo $this->register_number; ?> Records</div>
+					<div class="titulo-registro">Found <?php echo $this->register_number; ?> records</div>
 				</div>
 				<div class="col-2 text-end">
 					<div class="texto-paginas">Records per Page:</div>
@@ -265,7 +265,7 @@
 		<div class="franja-paginas" style="border-top: 1px solid #CCCCCC;margin-top: 2%;">
 			<div class="row" style="padding-top: 1%;">
 				<div class="col-5">
-					<div class="titulo-registro">Found <?php echo $this->register_number; ?> Records</div>
+					<div class="titulo-registro">Found <?php echo $this->register_number; ?> records</div>
 				</div>
 				<div class="col-2 text-end">
 					<div class="texto-paginas">Records per Page:</div>
