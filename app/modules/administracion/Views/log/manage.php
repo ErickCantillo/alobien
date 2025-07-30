@@ -9,7 +9,7 @@
 			<?php }?>
 			<div class="row">
 				<div class="col-6 form-group">
-					<label for="log_usuario"  class="control-label">usuario</label>
+					<label for="log_usuario"  class="control-label">User</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-rojo-claro " ><i class="fas fa-pencil-alt"></i></span>
@@ -19,13 +19,13 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label class="control-label">tipo</label>
+					<label class="control-label">Type</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-verde " ><i class="far fa-list-alt"></i></span>
 						</div>
 						<select class="form-control" name="log_tipo"   >
-							<option value="">Seleccione...</option>
+							<option value="">Select...</option>
 							<?php foreach ($this->list_log_tipo AS $key => $value ){?>
 								<option <?php if($this->getObjectVariable($this->content,"log_tipo") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
 							<?php } ?>
@@ -34,7 +34,7 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="log_fecha"  class="control-label">fecha</label>
+					<label for="log_fecha"  class="control-label">Date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-verde-claro " ><i class="fas fa-pencil-alt"></i></span>
@@ -44,15 +44,15 @@
 					<div class="help-block with-errors"></div>
 				</div>
 				<div class="col-6 form-group">
-					<label for="log_log" class="form-label" >log</label>
+					<label for="log_log" class="form-label" >Log</label>
 					<textarea name="log_log" id="log_log"   class="form-control" rows="10"   ><?= $this->content->log_log; ?></textarea>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
 		</div>
 		<div class="botones-acciones">
-			<button class="btn btn-guardar" type="submit">Guardar</button>
-			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancelar</a>
+			<button class="btn btn-guardar" type="submit">Save</button>
+			<a href="<?php echo $this->route; ?>" class="btn btn-cancelar">Cancel</a>
 		</div>
 	</form>
 </div>

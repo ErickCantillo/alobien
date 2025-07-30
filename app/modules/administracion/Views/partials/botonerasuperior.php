@@ -1,6 +1,6 @@
 <!-- <div class="infousuario">
-	<span ><i class="fas fa-user-tie" aria-hidden="true"></i> Bienvenido(a): <?php echo $_SESSION['kt_login_name']; ?></span>
-	<a href="/administracion/loginuser/logout" class="enlace-salir">Salir <i class="fas fa-sign-out-alt"></i></a></i>
+	<span ><i class="fas fa-user-tie" aria-hidden="true"></i> Welcome: <?php echo $_SESSION['kt_login_name']; ?></span>
+	<a href="/administracion/loginuser/logout" class="enlace-salir">Exit <i class="fas fa-sign-out-alt"></i></a></i>
 </div> -->
 
 <div class="header-bx">
@@ -17,13 +17,13 @@
   <div class="header-bx-right">
     <div class="user-info-wrapper">
       <i class="fa-solid fa-user"></i>
-      <strong>Bienvenido:</strong>
+      <strong>Welcome:</strong>
       <span><?php echo $_SESSION['kt_login_name']; ?></span>
     </div>
     <div class="logout-wrapper">
       <a href="/administracion/loginuser/logout">
         <i class="fas fa-sign-out-alt"></i>
-        <span>Salir</span>
+        <span>Exit</span>
       </a>
     </div>
   </div>

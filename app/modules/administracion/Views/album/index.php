@@ -4,7 +4,7 @@
 		<div class="content-dashboard">
 			<div class="row">
 				<div class="col-3">
-					<label>name</label>
+					<label>Name</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono fondo-cafe "><i class="fas fa-pencil-alt"></i></span>
@@ -14,7 +14,7 @@
 					</label>
 				</div>
 				<div class="col-3">
-					<label>date</label>
+					<label>Date</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono  fondo-azul "><i class="fas fa-calendar-alt"></i></span>
@@ -24,7 +24,7 @@
 					</label>
 				</div>
 				<div class="col-3">
-					<label>image</label>
+					<label>Image</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono fondo-verde "><i class="fas fa-pencil-alt"></i></span>
@@ -34,7 +34,7 @@
 					</label>
 				</div>
 				<div class="col-3">
-					<label>active (Yes, No)</label>
+					<label>Active (Yes, No)</label>
 					<label class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text input-icono fondo-morado "><i class="fas fa-pencil-alt"></i></span>
@@ -66,7 +66,7 @@
 					if ($this->page == $i)
 						echo '<li class="active page-item"><a class="page-link">' . $this->page . '</a></li>';
 					else
-						echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . $i . '">' . $i . '</a></li>  ';
+						echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . $i . '">' . $i . '</a></li>';
 				}
 				if ($this->page != $this->totalpages)
 					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page + 1) . '">Next &raquo;</a></li>';
@@ -78,10 +78,10 @@
 		<div class="franja-paginas">
 			<div class="row">
 				<div class="col-5">
-					<div class="titulo-registro">Found <?php echo $this->register_number; ?> Records</div>
+					<div class="titulo-registro">Found <?php echo $this->register_number; ?> records</div>
 				</div>
 				<div class="col-3 text-right">
-					<div class="texto-paginas">Records per page:</div>
+					<div class="texto-paginas">Records by page:</div>
 				</div>
 				<div class="col-1">
 					<select class="form-control form-control-sm selectpagination">
@@ -100,8 +100,9 @@
 					</select>
 				</div>
 				<div class="col-3">
-					<div class="text-right"><a class="btn btn-sm btn-success" href="<?php echo $this->route . "\manage"; ?>"> <i
-								class="fas fa-plus-square"></i> Create New</a></div>
+					<div class="text-right"><a class="btn btn-sm btn-success"
+							href="<?php echo $this->route . "\manage"; ?>"> <i class="fas fa-plus-square"></i> Create
+							New</a></div>
 				</div>
 			</div>
 		</div>
@@ -109,12 +110,12 @@
 			<table class=" table table-striped  table-hover table-administrator text-left">
 				<thead>
 					<tr>
-						<td>name</td>
-						<td>date</td>
-						<td>image</td>
-						<td>active (Yes, No)</td>
+						<td>Name</td>
+						<td>Date</td>
+						<td>Image</td>
+						<td>Active (Yes, No)</td>
 						<td width="100">Order</td>
-						<td></td>
+						<td width="100"></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -125,7 +126,8 @@
 							<td><?= $content->album_fecha; ?></td>
 							<td>
 								<?php if ($content->album_imagen) { ?>
-									<img src="/images/<?= $content->album_imagen; ?>" class="img-thumbnail thumbnail-administrator" />
+									<img src="/images/<?= $content->album_imagen; ?>"
+										class="img-thumbnail thumbnail-administrator" />
 								<?php } ?>
 								<div><?= $content->album_imagen; ?></div>
 							</td>
@@ -137,16 +139,20 @@
 							</td>
 							<td class="text-right">
 								<div>
-									<a class="btn btn-verde btn-sm" href="/administracion/fotos/cargamasiva/?fotos_album=<?= $id ?>"
-										data-bs-toggle="tooltip" data-placement="top" title="Imagenes Carga Masiva"><i
+									<a class="btn btn-verde btn-sm"
+										href="/administracion/fotos/cargamasiva/?fotos_album=<?= $id ?>"
+										data-bs-toggle="tooltip" data-placement="top" title="Massive image loading"><i
 											class="fa-regular fa-images"></i></a>
 									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>"
-										data-bs-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-pen-alt"></i></a>
-									<a class="btn btn-rosado btn-sm" href="/administracion/fotos/?album=<?= $id ?>" data-bs-toggle="tooltip"
-										data-placement="top" title="Images"><i class="fas fa-images"></i></a>
+										data-bs-toggle="tooltip" data-placement="top" title="Edit"><i
+											class="fas fa-pen-alt"></i></a>
+									<a class="btn btn-rosado btn-sm" href="/administracion/fotos/?album=<?= $id ?>"
+										data-bs-toggle="tooltip" data-placement="top" title="Images"><i
+											class="fas fa-images"></i></a>
 
-									<span data-bs-toggle="tooltip" data-placement="top" title="Delete"><a class="btn btn-rojo btn-sm"
-											data-bs-toggle="modal" data-bs-target="#modal<?= $id ?>"><i class="fas fa-trash-alt"></i></a></span>
+									<span data-bs-toggle="tooltip" data-placement="top" title="Delete"><a
+											class="btn btn-rojo btn-sm" data-bs-toggle="modal"
+											data-bs-target="#modal<?= $id ?>"><i class="fas fa-trash-alt"></i></a></span>
 								</div>
 								<!-- Modal -->
 								<div class="modal fade text-left" id="modal<?= $id ?>" tabindex="-1" role="dialog"
@@ -155,14 +161,16 @@
 										<div class="modal-content">
 											<div class="modal-header">
 												<h4 class="modal-title" id="myModalLabel">Delete Record</h4>
-												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												<button type="button" class="btn-close" data-bs-dismiss="modal"
+													aria-label="Close"></button>
 
 											</div>
 											<div class="modal-body">
 												<div class="">Are you sure you want to delete this record?</div>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+												<button type="button" class="btn btn-default"
+													data-bs-dismiss="modal">Cancel</button>
 												<a class="btn btn-danger"
 													href="<?php echo $this->route; ?>/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php echo ''; ?>">Delete</a>
 											</div>
@@ -190,7 +198,7 @@
 					if ($this->page == $i)
 						echo '<li class="active page-item"><a class="page-link">' . $this->page . '</a></li>';
 					else
-						echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . $i . '">' . $i . '</a></li>  ';
+						echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . $i . '">' . $i . '</a></li>';
 				}
 				if ($this->page != $this->totalpages)
 					echo '<li class="page-item"><a class="page-link" href="' . $url . '?page=' . ($this->page + 1) . '">Next &raquo;</a></li>';
