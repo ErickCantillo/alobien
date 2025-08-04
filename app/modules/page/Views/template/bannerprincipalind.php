@@ -72,7 +72,7 @@
                       <div class="sub-banners-content">
                         <h3 class="mt-4 titulo-sub-banners">
                           <i class="fa-regular fa-circle-check"></i>
-                          Our Services
+                          <?php echo $this->len['our_services']; ?>
                         </h3>
                         <div class="sub-banners row gap-2">
                           <?php foreach ($banner->subBanners as $subBanner) { ?>
@@ -127,7 +127,7 @@
                       <div class="sub-banners-responsive">
                         <h3 class="mt-4 titulo-sub-banners">
                           <i class="fa-regular fa-circle-check"></i>
-                          Our Services
+                          <?php echo $this->len['our_services']; ?>
                         </h3>
                         <div class="sub-banners row gap-0 gap-lg-2">
                           <?php foreach ($banner->subBanners as $subBanner) { ?>
