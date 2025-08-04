@@ -133,9 +133,7 @@
       <div class="col-12">
         <hr>
         <span class="text-center d-block">
-          &copy;<?= $this->len['all_rights_reserved'] ?> Filsa <?php echo date('Y'); ?> - <?= $this->len['designed_by'] ?> <a href="https://omegasolucionesweb.com" target="_blank" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-50-hover">
-            Omega Soluciones Web
-          </a>
+          &copy;<?= $this->len['all_rights_reserved'] ?> Filsa <?php echo date('Y'); ?>
         </span>
       </div>
     </div>

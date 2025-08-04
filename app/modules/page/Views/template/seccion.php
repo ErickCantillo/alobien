@@ -3,7 +3,7 @@
 		<?php echo $contenedor->contenido_columna; ?> 
 		contenedor-seccion 
 		<?php if ($contenedor->contenido_fondo_imagen_tipo == 2) { ?>dinamica<?php } ?>" data-aos
-	style="background-image:url(/images/<?php echo $contenedor->contenido_fondo_imagen; ?>); background-color:<?php echo $contenedor->contenido_fondo_color; ?>;">
+	style="background-image:url(/images/<?php echo $contenedor->contenido_fondo_imagen; ?>);   background-size: cover; background-color:<?php echo $contenedor->contenido_fondo_color; ?> ;">
 	<div class="content-box container">
 		<?php if ($contenedor->contenido_titulo_ver == 1) { ?>
 			<h2><?php echo $contenedor->contenido_titulo; ?></h2>
@@ -17,9 +17,9 @@
 		<?php } ?>
 		<?php if ($contenedor->contenido_enlace) { ?>
 			<div class="boton">
-				<a href="<?php echo $contenedor->contenido_enlace; ?>" <?php if ($contenedor->contenido_enlace_abrir == 1) { ?>target="_blank" <?php } ?> 	<?php if ($contenedor->contenedor_enlace_abrir == 1) { ?> target="_blank" <?php } ?>
+				<a href="<?php echo $contenedor->contenido_enlace; ?>" <?php if ($contenedor->contenido_enlace_abrir == 1) { ?>target="_blank" <?php } ?> <?php if ($contenedor->contenedor_enlace_abrir == 1) { ?> target="_blank" <?php } ?>
 					class="btn btn-vermas">
-					<?php if ($contenedor->contenedor_vermas) { ?> 		<?php echo $contenedor->contenido_vermas; ?> 	<?php } else { ?>VER
+					<?php if ($contenedor->contenedor_vermas) { ?> <?php echo $contenedor->contenido_vermas; ?> <?php } else { ?>VER
 						MÁS<?php } ?></a>
 			</div>
 		<?php } ?>
@@ -27,12 +27,12 @@
 			<div
 				class=" row 
 	<?php switch ($contenedor->contenido_columna_alineacion) {
-		case 2: ?>justify-content-center text-center<?php break;
-		case 3: ?> justify-content-end text-end<?php break;
-		case 4: ?>justify-content-between text-between<?php break;
-		case 5: ?>justify-content-around<?php break;
-		default: ?>justify-content-start text-start<?php break;
-	} ?>
+				case 2: ?>justify-content-center text-center<?php break;
+												case 3: ?> justify-content-end text-end<?php break;
+												case 4: ?>justify-content-between text-between<?php break;
+													case 5: ?>justify-content-around<?php break;
+													default: ?>justify-content-start text-start<?php break;
+												} ?>
 	<?php if ($contenedor->contenido_columna_espacios == 2 || $contenedor->contenido_columna_espacios == 4) { ?> no-gutters <?php } ?>">
 
 				<?php foreach ($rescontenido['hijos'] as $key => $rescolumna): ?>
@@ -66,10 +66,10 @@
 							<?php } else if ($columna->contenido_disenio == 5) { ?>
 								<?php $disenio = APP_PATH . "modules/page/Views/template/disenio5.php"; ?>
 							<?php } ?>
-								<div
-									class="<?php if ($columna->contenido_columna_espacios == 1 || $columna->contenido_columna_espacios == 3) { ?>con-espacios<?php } ?>">
+							<div
+								class="<?php if ($columna->contenido_columna_espacios == 1 || $columna->contenido_columna_espacios == 3) { ?>con-espacios<?php } ?>">
 								<?php include(APP_PATH . "modules/page/Views/template/carrousel.php"); ?>
-								</div>
+							</div>
 						<?php } else if ($columna->contenido_tipo == 7) { ?>
 							<?php $acordioncontent = $rescolumna['hijos']; ?>
 							<?php include(APP_PATH . "modules/page/Views/template/acordion.php"); ?>
