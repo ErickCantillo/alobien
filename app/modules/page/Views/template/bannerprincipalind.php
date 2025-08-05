@@ -21,15 +21,10 @@
         <div class="carousel-item <?php if ($key == 0) { ?>active <?php } ?>">
 
           <?php if ($this->id_youtube($banner->publicidad_video) != false) { ?>
-            <!--  <div class="fondo-video-youtube">
-              <div class="banner-video-youtube" id="videobanner<?php echo $banner->publicidad_id; ?> " data-video="<?php echo $this->id_youtube($banner->publicidad_video); ?>"></div>
-            </div> -->
-
-
+          
             <div class="fondo-imagen-principal fondo-imagen-principal-video">
 
               <a href="<?php echo $banner->publicidad_video; ?>" data-fancybox="video-gallery">
-
 
                 <img src="/images/<?php echo $banner->publicidad_imagen; ?>" alt="Banner image <?php echo $banner->publicidad_nombre; ?>"
                   class="d-none d-md-block img-banner">

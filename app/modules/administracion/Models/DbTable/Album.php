@@ -27,7 +27,8 @@ class Administracion_Model_DbTable_Album extends Db_Table
 		$album_imagen = $data['album_imagen'];
 		$album_estado = $data['album_estado'];
 		$album_descripcion = $data['album_descripcion'];
-		$query = "INSERT INTO album( album_nombre, album_fecha, album_imagen, album_estado, album_descripcion) VALUES ( '$album_nombre', '$album_fecha', '$album_imagen', '$album_estado', '$album_descripcion')";
+		$album_descripcion_en = $data['album_descripcion_en'];
+		$query = "INSERT INTO album( album_nombre, album_fecha, album_imagen, album_estado, album_descripcion, album_descripcion_en) VALUES ( '$album_nombre', '$album_fecha', '$album_imagen', '$album_estado', '$album_descripcion', '$album_descripcion_en')";
 		$res = $this->_conn->query($query);
         return mysqli_insert_id($this->_conn->getConnection());
 	}
@@ -45,7 +46,8 @@ class Administracion_Model_DbTable_Album extends Db_Table
 		$album_imagen = $data['album_imagen'];
 		$album_estado = $data['album_estado'];
 		$album_descripcion = $data['album_descripcion'];
-		$query = "UPDATE album SET  album_nombre = '$album_nombre', album_fecha = '$album_fecha', album_imagen = '$album_imagen', album_estado = '$album_estado', album_descripcion = '$album_descripcion' WHERE album_id = '".$id."'";
+		$album_descripcion_en = $data['album_descripcion_en'];
+		$query = "UPDATE album SET  album_nombre = '$album_nombre', album_fecha = '$album_fecha', album_imagen = '$album_imagen', album_estado = '$album_estado', album_descripcion = '$album_descripcion', album_descripcion_en = '$album_descripcion_en' WHERE album_id = '".$id."'";
 		$res = $this->_conn->query($query);
 	}
 }

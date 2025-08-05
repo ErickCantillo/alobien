@@ -28,7 +28,8 @@ class Administracion_Model_DbTable_Fotos extends Db_Table
 		$fotos_fecha = $data['fotos_fecha'];
 		$fotos_album = $data['fotos_album'];
 		$fotos_descripcion = $data['fotos_descripcion'];
-		$query = "INSERT INTO fotos( fotos_estado, fotos_titulo, fotos_foto, fotos_fecha, fotos_album, fotos_descripcion) VALUES ( '$fotos_estado', '$fotos_titulo', '$fotos_foto', '$fotos_fecha', '$fotos_album', '$fotos_descripcion')";
+		$fotos_descripcion_en = $data['fotos_descripcion_en'];
+		$query = "INSERT INTO fotos( fotos_estado, fotos_titulo, fotos_foto, fotos_fecha, fotos_album, fotos_descripcion, fotos_descripcion_en) VALUES ( '$fotos_estado', '$fotos_titulo', '$fotos_foto', '$fotos_fecha', '$fotos_album', '$fotos_descripcion', '$fotos_descripcion_en')";
 		$res = $this->_conn->query($query);
         return mysqli_insert_id($this->_conn->getConnection());
 	}
@@ -47,7 +48,8 @@ class Administracion_Model_DbTable_Fotos extends Db_Table
 		$fotos_fecha = $data['fotos_fecha'];
 		$fotos_album = $data['fotos_album'];
 		$fotos_descripcion = $data['fotos_descripcion'];
-		$query = "UPDATE fotos SET  fotos_estado = '$fotos_estado', fotos_titulo = '$fotos_titulo', fotos_foto = '$fotos_foto', fotos_fecha = '$fotos_fecha', fotos_album = '$fotos_album', fotos_descripcion = '$fotos_descripcion' WHERE fotos_id = '".$id."'";
+		$fotos_descripcion_en = $data['fotos_descripcion_en'];
+		$query = "UPDATE fotos SET  fotos_estado = '$fotos_estado', fotos_titulo = '$fotos_titulo', fotos_foto = '$fotos_foto', fotos_fecha = '$fotos_fecha', fotos_album = '$fotos_album', fotos_descripcion = '$fotos_descripcion', fotos_descripcion_en = '$fotos_descripcion_en' WHERE fotos_id = '".$id."'";
 		$res = $this->_conn->query($query);
 	}
 }

@@ -50,6 +50,12 @@
 					<textarea name="fotos_descripcion" id="fotos_descripcion"   class="form-control tinyeditor" rows="10"   ><?= $this->content->fotos_descripcion; ?></textarea>
 					<div class="help-block with-errors"></div>
 				</div>
+
+				<div class="col-12 form-group">
+					<label for="fotos_descripcion_en" class="form-label" >Description (English)</label>
+					<textarea name="fotos_descripcion_en" id="fotos_descripcion_en"   class="form-control tinyeditor" rows="10"   ><?= $this->content->fotos_descripcion_en; ?></textarea>
+					<div class="help-block with-errors"></div>
+				</div>
 			</div>
 		</div>
 		<div class="botones-acciones">

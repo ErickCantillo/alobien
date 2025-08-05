@@ -241,6 +241,7 @@ class Administracion_albumController extends Administracion_mainController
 			$data['album_estado'] = $this->_getSanitizedParam("album_estado");
 		}
 		$data['album_descripcion'] = $this->_getSanitizedParamHtml("album_descripcion");
+		$data['album_descripcion_en'] = $this->_getSanitizedParamHtml("album_descripcion_en");
 		return $data;
 	}
 	/**

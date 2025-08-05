@@ -59,13 +59,20 @@
 						</div>
 					<?php } ?>
 				</div>
-
+						<div class="col-12 form-group">
+					<label for="album_descripcion_en" class="form-label">Description (English)</label>
+					<textarea name="album_descripcion_en" id="album_descripcion_en" class="form-control tinyeditor"
+						rows="10"><?= $this->content->album_descripcion_en; ?></textarea>
+					<div class="help-block with-errors"></div>
+				</div>
 				<div class="col-12 form-group">
-					<label for="album_descripcion" class="form-label">Description</label>
+					<label for="album_descripcion" class="form-label">Description (Spanish)</label>
 					<textarea name="album_descripcion" id="album_descripcion" class="form-control tinyeditor"
 						rows="10"><?= $this->content->album_descripcion; ?></textarea>
 					<div class="help-block with-errors"></div>
 				</div>
+
+				
 			</div>
 		</div>
 		<div class="botones-acciones">

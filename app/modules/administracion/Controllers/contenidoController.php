@@ -405,6 +405,7 @@ class Administracion_contenidoController extends Administracion_mainController
     $data['contenido_fondo_color'] = $this->_getSanitizedParam("contenido_fondo_color");
     $data['contenido_introduccion'] = $this->_getSanitizedParamHtml("contenido_introduccion");
     $data['contenido_descripcion'] = $this->_getSanitizedParamHtml("contenido_descripcion");
+    $data['contenido_descripcion_en'] = $this->_getSanitizedParamHtml("contenido_descripcion_en");
     $data['contenido_enlace'] = $this->_getSanitizedParam("contenido_enlace");
     $data['contenido_vermas'] = $this->_getSanitizedParam("contenido_vermas");
     $data['contenido_video'] = $this->_getSanitizedParamHtml("contenido_video");

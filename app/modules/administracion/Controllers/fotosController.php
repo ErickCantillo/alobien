@@ -250,6 +250,7 @@ class Administracion_fotosController extends Administracion_mainController
 		$data['fotos_fecha'] = $this->_getSanitizedParam("fotos_fecha");
 		$data['fotos_album'] = $this->_getSanitizedParamHtml("fotos_album");
 		$data['fotos_descripcion'] = $this->_getSanitizedParamHtml("fotos_descripcion");
+		$data['fotos_descripcion_en'] = $this->_getSanitizedParamHtml("fotos_descripcion_en");
 		return $data;
 	}
 
